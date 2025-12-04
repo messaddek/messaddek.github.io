@@ -3,6 +3,7 @@
 ## ✅ Pre-Deployment Verification
 
 ### Files Created/Modified
+
 - [x] `index.html` - Enhanced with metadata and favicon
 - [x] `assets/css/custom-style.css` - Complete custom stylesheet (NEW)
 - [x] `assets/js/script.js` - Enhanced with animations
@@ -14,6 +15,7 @@
 - [x] `CHECKLIST.md` - This file (NEW)
 
 ### Local Testing
+
 - [ ] Open `index.html` in browser
 - [ ] Test `help` command
 - [ ] Test `about` command
@@ -30,21 +32,25 @@
 ## 📤 GitHub Deployment
 
 ### Step 1: Stage Changes
+
 ```bash
 git add .
 ```
 
 ### Step 2: Commit Changes
+
 ```bash
 git commit -m "🎨 Major site enhancement: Modern fonts, animations, responsive design, and updated content"
 ```
 
 ### Step 3: Push to GitHub
+
 ```bash
 git push origin main
 ```
 
 ### Step 4: Verify GitHub Pages
+
 1. Go to: https://github.com/messaddek/messaddek.github.io
 2. Click on "Settings"
 3. Scroll to "GitHub Pages" section
@@ -55,6 +61,7 @@ git push origin main
 ## 🧪 Post-Deployment Testing
 
 ### Desktop Testing
+
 - [ ] Visit https://messaddek.github.io on desktop
 - [ ] Verify all animations work
 - [ ] Check terminal colors and effects
@@ -63,6 +70,7 @@ git push origin main
 - [ ] Check favicon appears
 
 ### Mobile Testing
+
 - [ ] Open on mobile phone
 - [ ] Check responsive layout
 - [ ] Verify touch interactions work
@@ -70,6 +78,7 @@ git push origin main
 - [ ] Check font sizes are readable
 
 ### Browser Compatibility
+
 - [ ] Chrome (Desktop & Mobile)
 - [ ] Firefox
 - [ ] Safari (Desktop & Mobile)
@@ -77,6 +86,7 @@ git push origin main
 - [ ] Samsung Internet (if available)
 
 ### Performance Testing
+
 - [ ] PageSpeed Insights (https://pagespeed.web.dev/)
 - [ ] Check load time (should be < 3 seconds)
 - [ ] Verify animations are 60fps
@@ -85,11 +95,13 @@ git push origin main
 ## 🌐 SEO & Sharing
 
 ### SEO Verification
+
 - [ ] Search site on Google: "site:messaddek.github.io"
 - [ ] Verify meta description appears
 - [ ] Check page title in search results
 
 ### Social Media Testing
+
 - [ ] Share on LinkedIn - verify Open Graph preview
 - [ ] Share on Twitter/X - verify Twitter Card
 - [ ] Share on Facebook - verify preview
@@ -98,6 +110,7 @@ git push origin main
 ## 📊 Analytics (Optional)
 
 ### Add Google Analytics (Optional)
+
 1. Create Google Analytics account
 2. Get tracking code
 3. Add to `index.html` before `</head>`
@@ -121,24 +134,28 @@ git push origin main
 ## 🚨 Troubleshooting
 
 ### Site Not Loading
+
 - Check GitHub Pages is enabled in repository settings
 - Verify branch is set to "main"
 - Wait 2-5 minutes after pushing
 - Clear browser cache (Ctrl+Shift+Delete)
 
 ### Styles Not Applying
+
 - Verify `custom-style.css` is in `assets/css/` folder
 - Check file paths in `index.html`
 - Clear browser cache
 - Check browser console for errors (F12)
 
 ### Animations Not Working
+
 - Verify browser supports CSS animations
 - Check if hardware acceleration is enabled
 - Try different browser
 - Clear cache and hard reload (Ctrl+Shift+R)
 
 ### Mobile Issues
+
 - Test in Chrome DevTools mobile view
 - Verify viewport meta tag is present
 - Check media query breakpoints
@@ -147,6 +164,7 @@ git push origin main
 ## 📝 Notes
 
 ### What's Enhanced
+
 - ✨ Modern fonts (Fira Code, Inter)
 - 🎨 Gradient backgrounds with particles
 - 💫 Smooth animations and transitions
@@ -157,6 +175,7 @@ git push origin main
 - 🖼️ Custom favicon
 
 ### Browser Support
+
 - Chrome 90+
 - Firefox 88+
 - Safari 14+
@@ -164,6 +183,7 @@ git push origin main
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
 ### Performance Targets
+
 - Load time: < 3 seconds
 - First Contentful Paint: < 1.5 seconds
 - Time to Interactive: < 3 seconds
@@ -172,6 +192,7 @@ git push origin main
 ## 🎉 Success Criteria
 
 Your site is successfully deployed when:
+
 1. ✅ It loads at https://messaddek.github.io
 2. ✅ All animations are smooth
 3. ✅ Commands work in terminal
@@ -184,6 +205,7 @@ Your site is successfully deployed when:
 ## 🔄 Future Updates
 
 When you need to update your resume:
+
 1. Edit `assets/json/resume.json`
 2. Commit and push to GitHub
 3. Site updates automatically
@@ -192,6 +214,7 @@ When you need to update your resume:
 ## 📞 Support
 
 If you encounter any issues:
+
 1. Check browser console (F12) for errors
 2. Verify all files are committed to Git
 3. Clear browser cache
