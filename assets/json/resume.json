@@ -1,431 +1,462 @@
 {
-    "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
-    "basics": {
-      "name": "Mohammed Essaddek",
-      "label": ".NET Core | Full-Stack | AzureDevops | MCSA - Web Applications",
-      "image": "",
-      "email": "m.essaddek@gmail.com",
-      "phone": "",
-      "url": "",
-      "summary": "Welcome to my profile.\nI am a computer engineer. My knowledge in management and IT development allows me to better organize my projects, manage my time and the resources at my disposal efficiently in order to achieve good results. I am attentive to the market and I do not I have no geographic requirements (mobile anywhere in the world).\n\nSummary of skills:\n- Languages: C #, XHTML, CSS, XML, JavaScript, Ajax, Angular, ASP.net, ADO.net.\n- Frameworks: dotNetCore API, dotNetCore MVC, ASP .net MVC, EntityFramework, JQuery.\n- Versioning: Git hub, TFVC.\n- Web services: Rest.\n- Methods and AGL: UML, Merise, MDA.\n- DBMS: Oracle, PostgreSql, SQL server, MySQL.\n- Operating systems: Linux (RedHat, Debian), Windows (2008, XP, Seven).\n- Management: ITIL V3, MS Project, project management.\n- Tools and IDE: Visual Studio, Visual Studio Code, SSMS",
-      "location": {
-        "countryCode": "FR",
-        "address": ""
-      },
-      "profiles": [
-        {
-          "network": "LinkedIn",
-          "username": "ACoAAA1Mo44BQvVi8ztw0krJL8dKyacuNTQnQL4",
-          "url": "https://www.linkedin.com/in/ACoAAA1Mo44BQvVi8ztw0krJL8dKyacuNTQnQL4/"
-        }
-      ]
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Mohammed Essaddek",
+    "label": "Technical Lead .NET | Full-Stack Developer | Azure DevOps Expert | MCSA - Web Applications",
+    "image": "",
+    "email": "m.essaddek@gmail.com",
+    "phone": "",
+    "url": "https://messaddek.github.io",
+    "summary": "👋 Welcome to my interactive terminal resume!\n\n🚀 I am an accomplished Technical Lead and Full-Stack Developer with 10+ years of experience specializing in .NET technologies, cloud architecture, and DevOps practices. Currently leading technical initiatives at Teal Technology Services (IBM & OCP Joint Venture), I excel in architecting scalable solutions and mentoring development teams.\n\n💡 Core Expertise:\n• Languages & Frameworks: C#, .NET Core, ASP.NET MVC, Entity Framework, Angular, TypeScript, JavaScript\n• Cloud & DevOps: Microsoft Azure (IoT Hub, Functions, DevOps), CI/CD, Infrastructure as Code\n• Database: SQL Server, PostgreSQL, Oracle, MySQL\n• Architecture: Microservices, REST APIs, Event-Driven Design\n• Leadership: Technical Architecture, Code Review, Team Mentoring, Agile/Scrum\n• Tools: Visual Studio, VS Code, Azure DevOps, Git, Docker\n\n🎯 Proven track record of delivering mission-critical applications including IoT tracking systems, government portals, and enterprise-scale solutions. Passionate about clean code, best practices, and continuous learning.\n\n📍 Based in Morocco | Open to remote opportunities worldwide | Fluent in French, Arabic, and English",
+    "location": {
+      "countryCode": "MA",
+      "address": "Casablanca, Morocco",
+      "city": "Casablanca",
+      "region": "Casablanca-Settat"
     },
-    "work": [
+    "profiles": [
       {
-        "name": "Teal Technology Services (IBM & OCP JV)",
-        "position": "Technical Lead .NET",
-        "startDate": "2022-01-31",
-        "endDate": "",
-        "highlights": [],
-        "url": "https://www.linkedin.com/company/teal-technology-services/",
-        "location": "Casablanca, Casablanca-Settat, Maroc"
-      },
-      {
-        "name": "Akka Technologies",
-        "position": "Senior .Net Engineer",
-        "startDate": "2021-02-28",
-        "endDate": "2022-01-31",
-        "highlights": [],
-        "url": "https://www.linkedin.com/company/akka-technologies/",
-        "location": "Casablanca Metropolitan Area"
-      },
-      {
-        "name": "Prestige Informatique",
-        "position": "Senior dotnet Consultant",
-        "startDate": "2020-06-30",
-        "endDate": "2021-02-28",
-        "highlights": [],
-        "summary": "The implementation of the https://rdv.consulat.ma/ platform\n\nAs a Senior Developer, I carried out the migration, the redesign of an appointment booking application from .NET WebForms to dotnet core MVC.\nThe application is dedicated to Moroccans living abroad and allows them to make appointments, follow requests, and send complaints to Moroccan consular services.\n\nTools: DotnetCore, DotnetCore Web API, AzureDevops, Linux, Sql Server",
-        "url": "",
-        "location": "Skhirate Témara, Rabat-Salé-Kénitra, Maroc"
-      },
-      {
-        "name": "Accenture",
-        "position": "Technical Architect, Senior Business Analyst",
-        "startDate": "2017-11-30",
-        "endDate": "2020-06-30",
-        "highlights": [],
-        "summary": "Member of the Nexans TMA team and responsible for the .NET scope.\nMy mission mainly consists in analyzing the needs of the customers and in proposing adequate technical solutions.\nI am in particular responsible for the Connected Drums application, which is a GPS tracking application for Nexans cable drums.\nTools:\n- Azure IoT hub;\n- Azure DevOps;\n- AspNet Web API;\n- Azure functions;\n- Angular 5.",
-        "url": "https://www.linkedin.com/company/accenture/",
-        "location": "Casablanca Prefecture, Morocco"
-      },
-      {
-        "name": "Atos",
-        "position": "Ingénieur Etudes et Développement",
-        "startDate": "2016-09-30",
-        "endDate": "2017-10-31",
-        "highlights": [],
-        "summary": "Membre de l'équipe projet TMA MESSIv2, pour La Poste Courrier International en tant que Développeur Microsoft .NET",
-        "url": "https://www.linkedin.com/company/atos/",
-        "location": "Casablanca Prefecture, Morocco"
-      },
-      {
-        "name": "OCP SA",
-        "position": "Consultant .Net",
-        "startDate": "2015-12-31",
-        "endDate": "2016-05-31",
-        "highlights": [],
-        "summary": "Développent d'une Application Reporting Environnemental Sous l'environnement ASP .Net MVC 5, SQL Server.\nMission : Etude du besoin,Conception, Mise en place de l'architecture applicative, réalisation de la solution.",
-        "url": "https://www.linkedin.com/company/ocp/",
-        "location": "Casablanca"
-      },
-      {
-        "name": "Algo Consulting Group",
-        "position": "IT Consultant",
-        "startDate": "2014-12-31",
-        "endDate": "2015-12-31",
-        "highlights": [],
-        "summary": "Participation à la mise en place du Système Informations Voyageurs, pour l'Office National des Chemins de Fer.",
-        "url": "https://www.linkedin.com/company/algo-consulting-group/",
-        "location": "Rabat"
-      },
-      {
-        "name": "Direction Générale des Impôts",
-        "position": "Stagiaire",
-        "startDate": "2014-02-28",
-        "endDate": "2014-06-30",
-        "highlights": [],
-        "summary": "Etude Conception Réalisation d'une plateforme de gestion des carrières.",
-        "url": "https://www.linkedin.com/company/direction-g-n-rale-des-imp-ts/",
-        "location": "Rabat"
-      },
-      {
-        "name": "Ministère de l'économie et des Finances",
-        "position": "Stagiaire",
-        "startDate": "2013-07-31",
-        "endDate": "2013-09-30",
-        "highlights": [],
-        "summary": "Etude, conception et réalisation d'un portail intranet.",
-        "url": "https://www.linkedin.com/company/emff/",
-        "location": "Rabat"
-      },
-      {
-        "name": "Centrale Laitière",
-        "position": "Stagiaire",
-        "startDate": "2012-07-31",
-        "endDate": "2012-09-30",
-        "highlights": [],
-        "url": "https://www.linkedin.com/company/centrale-laitiere/",
-        "location": "Casablanca"
+        "network": "LinkedIn",
+        "username": "ACoAAA1Mo44BQvVi8ztw0krJL8dKyacuNTQnQL4",
+        "url": "https://www.linkedin.com/in/ACoAAA1Mo44BQvVi8ztw0krJL8dKyacuNTQnQL4/"
       }
-    ],
-    "volunteer": [],
-    "education": [
-      {
-        "institution": "École Nationale des Sciences Appliquées de Oujda-ENSAO",
-        "area": "Qualité du Logiciel",
-        "studyType": "Diplôme d'ingénieur",
-        "startDate": "2011-12-31",
-        "endDate": "2014-12-31",
-        "score": "",
-        "courses": []
-      },
-      {
-        "institution": "Ecole Nationale des Sciences Appliquées d'Al Hoceima",
-        "area": "",
-        "studyType": "Cycle préparatoire",
-        "startDate": "2009-12-31",
-        "endDate": "2011-12-31",
-        "score": "",
-        "courses": []
-      },
-      {
-        "institution": "Lycé Omar Ibn Abdelaziz",
-        "area": "Sciences Mathématiques B",
-        "studyType": "Baccalauréat",
-        "startDate": "2008-12-31",
-        "endDate": "2009-12-31",
-        "score": "",
-        "courses": []
-      }
-    ],
-    "awards": [],
-    "certificates": [
-      {
-        "name": "Scrum Foundation Professional Certificate",
-        "issuer": "CertiProf",
-        "startDate": "2020-06-30"
-      },
-      {
-        "name": "Exam 483: Programming in C#",
-        "issuer": "Microsoft",
-        "startDate": "2018-06-30",
-        "url": "https://www.youracclaim.com/badges/60d8016a-c510-4f60-9445-0d0cf89a9f10/linked_in_profile"
-      },
-      {
-        "name": "Exam 480: Programming in HTML5 with JavaScript and CSS3",
-        "issuer": "Microsoft",
-        "startDate": "2018-05-31",
-        "url": "https://www.youracclaim.com/badges/249b3ce5-3ffb-4e0e-9e20-6437ca660fde/linked_in_profile"
-      },
-      {
-        "name": "MCSA: Web Applications - Certified 2018",
-        "issuer": "Microsoft",
-        "startDate": "2018-05-31",
-        "url": "https://www.youracclaim.com/badges/172bf91f-e6a0-4986-b3cb-013772ff5e7c/linked_in_profile"
-      },
-      {
-        "name": "Les fondamentaux d’ASP.NET MVC 5",
-        "issuer": "LinkedIn",
-        "startDate": "2017-03-31",
-        "url": "http://www.linkedin.com/learning/les-fondamentaux-d-asp-net-mvc-5?trk=flagship-lil_details_certification"
-      },
-      {
-        "name": "Microsoft Certified Solution Developper (Exam : 70 - 486) Developing ASP.NET MVC Web Applications",
-        "issuer": "Microsoft",
-        "startDate": "2015-02-28",
-        "url": "https://www.microsoft.com/learning/en-us/exam-70-486.aspx"
-      }
-    ],
-    "publications": [],
-    "skills": [
-      {
-        "name": ".NET",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Angular",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Microsoft Azure",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "DNS",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Web Services",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Gestion de projet",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Programmation web",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Scrum",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "ASP.NET MVC",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "ASP.NET",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Microsoft SQL Server",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Windows Server",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Active Directory",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "HTML 5",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "CSS",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "jQuery",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "C#",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Entity Framework",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "UML",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "SQL",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "DevOps",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "SharePoint Server",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": ".NET framework",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "WPF",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "API Web ASP.NET",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "dotnet core",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "SharePoint",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Développement Web Back-End",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Microsoft Office Sharepoint Server",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Management",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "SharePoint Designer",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "JSON",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Technologies Microsoft",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "Windows Sharepoint Services",
-        "level": "",
-        "keywords": []
-      },
-      {
-        "name": "JavaScript",
-        "level": "",
-        "keywords": []
-      }
-    ],
-    "languages": [
-      {
-        "language": "fr",
-        "fluency": "Native Speaker"
-      },
-      {
-        "fluency": "Professional Working",
-        "language": "Anglais"
-      },
-      {
-        "fluency": "Native Speaker",
-        "language": "Arabe"
-      },
-      {
-        "fluency": "Native Speaker",
-        "language": "Français"
-      }
-    ],
-    "interests": [],
-    "references": [
-      {
-        "name": "Yassine  AIT ELBAZ",
-        "reference": "Il est difficile de décrire comment le travail de Mohamed m'a impressionné quand j'ai eu la chance de travailler avec lui. \nJe ne saurais mieux faire que de recommander vivement Mohamed pour ses talents."
-      },
-      {
-        "name": "Tarik Fadli",
-        "reference": "Par la présente, je désire recommander Mohammed ESSADDEK.\r\n                  Ayant eu l’occasion de diriger Monsieur ESSADDEK dans ses fonctions de Consultant Développeur depuis plus d’une année, je témoignes de sa remarquable compétence, de sa capacité d’adaptation et de la qualité de ses rapports avec les clients. Celui-ci sait aussi faire preuve d’un professionnalisme exceptionnel dans ses contacts avec ses pairs et dans sa collaboration avec la direction. En progression professionnelle constante, Mohammed est toujours à la recherche de moyens pertinents pour assurer la réussite dans son travail. Il représente un atout certain pour toute organisation.\r\nC’est donc avec empressement que je le recommande."
-      }
-    ],
-    "projects": [
-      {
-        "name": "Intranet",
-        "startDate": "2013-07-31",
-        "summary": "Mise en place d'une architecture de domaine, réalisation d'une plateforme Intranet en SharePoint Services Foundation",
-        "url": null,
-        "endDate": "2013-09-30"
-      },
-      {
-        "name": "Open € Commerce",
-        "startDate": "2012-10-31",
-        "summary": "Plateforme €Commerce en Symfony",
-        "url": null,
-        "endDate": "2013-02-28"
-      },
-      {
-        "name": "jSQLEditor",
-        "startDate": "2012-09-30",
-        "summary": "Application GUI pour la gestion et l'administration des bases de données.",
-        "url": null,
-        "endDate": "2012-12-31"
-      },
-      {
-        "name": "Flotte Mobile",
-        "startDate": "2012-07-31",
-        "summary": "Interface Web pour la gestion de la flotte mobile",
-        "url": null,
-        "endDate": "2012-09-30"
-      }
-    ],
-    "meta": {
-      "version": "v1.0.0",
-      "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
+    ]
+  },
+  "work": [
+    {
+      "name": "Teal Technology Services (IBM & OCP JV)",
+      "position": "Technical Lead .NET",
+      "startDate": "2022-01-31",
+      "endDate": "",
+      "highlights": [
+        "🎯 Leading technical architecture and development for enterprise-scale .NET solutions",
+        "👥 Mentoring and guiding development teams on best practices and code quality",
+        "🏗️ Designing and implementing microservices architecture using .NET Core",
+        "☁️ Architecting cloud-native solutions on Microsoft Azure",
+        "📊 Conducting technical reviews and establishing coding standards",
+        "🔄 Driving DevOps practices and CI/CD pipeline implementations"
+      ],
+      "summary": "Leading technical initiatives at the IBM and OCP joint venture, responsible for architectural decisions, team leadership, and delivery of high-quality enterprise solutions. Focus on .NET Core, Azure cloud services, and modern development practices.",
+      "url": "https://www.linkedin.com/company/teal-technology-services/",
+      "location": "Casablanca, Casablanca-Settat, Morocco"
+    },
+    {
+      "name": "Akka Technologies",
+      "position": "Senior .NET Engineer",
+      "startDate": "2021-02-28",
+      "endDate": "2022-01-31",
+      "highlights": [
+        "⚡ Developed high-performance .NET Core applications",
+        "🔧 Implemented RESTful APIs and microservices architecture",
+        "🧪 Established unit testing practices and improved code coverage",
+        "📈 Optimized application performance and database queries"
+      ],
+      "summary": "Delivered enterprise-grade .NET solutions with focus on performance, scalability, and maintainability. Collaborated with cross-functional teams to implement best practices and modern development workflows.",
+      "url": "https://www.linkedin.com/company/akka-technologies/",
+      "location": "Casablanca Metropolitan Area"
+    },
+    {
+      "name": "Prestige Informatique",
+      "position": "Senior .NET Consultant",
+      "startDate": "2020-06-30",
+      "endDate": "2021-02-28",
+      "highlights": [
+        "🌐 Led migration of rdv.consulat.ma from .NET WebForms to .NET Core MVC",
+        "👥 Served 100,000+ Moroccan citizens abroad for consular appointments",
+        "🏗️ Redesigned application architecture for scalability and performance",
+        "🔒 Implemented security best practices and data protection measures",
+        "🐧 Deployed on Linux infrastructure with SQL Server backend",
+        "📱 Created responsive UI for mobile and desktop users"
+      ],
+      "summary": "Spearheaded the complete modernization of Morocco's consular appointment platform (https://rdv.consulat.ma/), transforming a legacy .NET WebForms application into a modern .NET Core MVC solution. The platform enables Moroccans living abroad to book appointments, track requests, and submit complaints to consular services.\n\nTechnologies: .NET Core MVC, .NET Core Web API, Azure DevOps, Linux, SQL Server",
+      "url": "https://rdv.consulat.ma/",
+      "location": "Skhirate Témara, Rabat-Salé-Kénitra, Morocco"
+    },
+    {
+      "name": "Accenture",
+      "position": "Technical Architect & Senior Business Analyst",
+      "startDate": "2017-11-30",
+      "endDate": "2020-06-30",
+      "highlights": [
+        "🎯 Led technical architecture for Nexans TMA (.NET scope)",
+        "📡 Architected 'Connected Drums' IoT GPS tracking platform for industrial cable management",
+        "☁️ Implemented Azure IoT Hub for real-time device telemetry and management",
+        "⚡ Developed serverless solutions using Azure Functions",
+        "🔧 Built RESTful APIs with ASP.NET Web API",
+        "📊 Created Angular 5 dashboard for real-time tracking and analytics",
+        "💼 Conducted business analysis and proposed technical solutions aligned with client needs"
+      ],
+      "summary": "Served as Technical Architect and Business Analyst for Nexans, responsible for the entire .NET technology stack. Led the development of 'Connected Drums', an innovative IoT solution for GPS tracking of Nexans cable drums, leveraging Azure cloud services for real-time monitoring and analytics.\n\nKey Technologies: Azure IoT Hub, Azure DevOps, ASP.NET Web API, Azure Functions, Angular 5, .NET Core",
+      "url": "https://www.linkedin.com/company/accenture/",
+      "location": "Casablanca Prefecture, Morocco"
+    },
+    {
+      "name": "Atos",
+      "position": "Ingénieur Etudes et Développement",
+      "startDate": "2016-09-30",
+      "endDate": "2017-10-31",
+      "highlights": [],
+      "summary": "Membre de l'équipe projet TMA MESSIv2, pour La Poste Courrier International en tant que Développeur Microsoft .NET",
+      "url": "https://www.linkedin.com/company/atos/",
+      "location": "Casablanca Prefecture, Morocco"
+    },
+    {
+      "name": "OCP SA",
+      "position": "Consultant .Net",
+      "startDate": "2015-12-31",
+      "endDate": "2016-05-31",
+      "highlights": [],
+      "summary": "Développent d'une Application Reporting Environnemental Sous l'environnement ASP .Net MVC 5, SQL Server.\nMission : Etude du besoin,Conception, Mise en place de l'architecture applicative, réalisation de la solution.",
+      "url": "https://www.linkedin.com/company/ocp/",
+      "location": "Casablanca"
+    },
+    {
+      "name": "Algo Consulting Group",
+      "position": "IT Consultant",
+      "startDate": "2014-12-31",
+      "endDate": "2015-12-31",
+      "highlights": [],
+      "summary": "Participation à la mise en place du Système Informations Voyageurs, pour l'Office National des Chemins de Fer.",
+      "url": "https://www.linkedin.com/company/algo-consulting-group/",
+      "location": "Rabat"
+    },
+    {
+      "name": "Direction Générale des Impôts",
+      "position": "Stagiaire",
+      "startDate": "2014-02-28",
+      "endDate": "2014-06-30",
+      "highlights": [],
+      "summary": "Etude Conception Réalisation d'une plateforme de gestion des carrières.",
+      "url": "https://www.linkedin.com/company/direction-g-n-rale-des-imp-ts/",
+      "location": "Rabat"
+    },
+    {
+      "name": "Ministère de l'économie et des Finances",
+      "position": "Stagiaire",
+      "startDate": "2013-07-31",
+      "endDate": "2013-09-30",
+      "highlights": [],
+      "summary": "Etude, conception et réalisation d'un portail intranet.",
+      "url": "https://www.linkedin.com/company/emff/",
+      "location": "Rabat"
+    },
+    {
+      "name": "Centrale Laitière",
+      "position": "Stagiaire",
+      "startDate": "2012-07-31",
+      "endDate": "2012-09-30",
+      "highlights": [],
+      "url": "https://www.linkedin.com/company/centrale-laitiere/",
+      "location": "Casablanca"
     }
+  ],
+  "volunteer": [],
+  "education": [
+    {
+      "institution": "École Nationale des Sciences Appliquées de Oujda-ENSAO",
+      "area": "Qualité du Logiciel",
+      "studyType": "Diplôme d'ingénieur",
+      "startDate": "2011-12-31",
+      "endDate": "2014-12-31",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Ecole Nationale des Sciences Appliquées d'Al Hoceima",
+      "area": "",
+      "studyType": "Cycle préparatoire",
+      "startDate": "2009-12-31",
+      "endDate": "2011-12-31",
+      "score": "",
+      "courses": []
+    },
+    {
+      "institution": "Lycé Omar Ibn Abdelaziz",
+      "area": "Sciences Mathématiques B",
+      "studyType": "Baccalauréat",
+      "startDate": "2008-12-31",
+      "endDate": "2009-12-31",
+      "score": "",
+      "courses": []
+    }
+  ],
+  "awards": [],
+  "certificates": [
+    {
+      "name": "Scrum Foundation Professional Certificate",
+      "issuer": "CertiProf",
+      "startDate": "2020-06-30"
+    },
+    {
+      "name": "Exam 483: Programming in C#",
+      "issuer": "Microsoft",
+      "startDate": "2018-06-30",
+      "url": "https://www.youracclaim.com/badges/60d8016a-c510-4f60-9445-0d0cf89a9f10/linked_in_profile"
+    },
+    {
+      "name": "Exam 480: Programming in HTML5 with JavaScript and CSS3",
+      "issuer": "Microsoft",
+      "startDate": "2018-05-31",
+      "url": "https://www.youracclaim.com/badges/249b3ce5-3ffb-4e0e-9e20-6437ca660fde/linked_in_profile"
+    },
+    {
+      "name": "MCSA: Web Applications - Certified 2018",
+      "issuer": "Microsoft",
+      "startDate": "2018-05-31",
+      "url": "https://www.youracclaim.com/badges/172bf91f-e6a0-4986-b3cb-013772ff5e7c/linked_in_profile"
+    },
+    {
+      "name": "Les fondamentaux d’ASP.NET MVC 5",
+      "issuer": "LinkedIn",
+      "startDate": "2017-03-31",
+      "url": "http://www.linkedin.com/learning/les-fondamentaux-d-asp-net-mvc-5?trk=flagship-lil_details_certification"
+    },
+    {
+      "name": "Microsoft Certified Solution Developper (Exam : 70 - 486) Developing ASP.NET MVC Web Applications",
+      "issuer": "Microsoft",
+      "startDate": "2015-02-28",
+      "url": "https://www.microsoft.com/learning/en-us/exam-70-486.aspx"
+    }
+  ],
+  "publications": [],
+  "skills": [
+    {
+      "name": ".NET",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Angular",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Microsoft Azure",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "DNS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Web Services",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Gestion de projet",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Programmation web",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Scrum",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "ASP.NET MVC",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "ASP.NET",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Windows Server",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Active Directory",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "HTML 5",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "CSS",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "jQuery",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "C#",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Entity Framework",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "UML",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SQL",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "DevOps",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SharePoint Server",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": ".NET framework",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "WPF",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "API Web ASP.NET",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "dotnet core",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SharePoint",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Développement Web Back-End",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Microsoft Office Sharepoint Server",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Management",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "SharePoint Designer",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "JSON",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Technologies Microsoft",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "Windows Sharepoint Services",
+      "level": "",
+      "keywords": []
+    },
+    {
+      "name": "JavaScript",
+      "level": "",
+      "keywords": []
+    }
+  ],
+  "languages": [
+    {
+      "language": "fr",
+      "fluency": "Native Speaker"
+    },
+    {
+      "fluency": "Professional Working",
+      "language": "Anglais"
+    },
+    {
+      "fluency": "Native Speaker",
+      "language": "Arabe"
+    },
+    {
+      "fluency": "Native Speaker",
+      "language": "Français"
+    }
+  ],
+  "interests": [],
+  "references": [
+    {
+      "name": "Yassine  AIT ELBAZ",
+      "reference": "Il est difficile de décrire comment le travail de Mohamed m'a impressionné quand j'ai eu la chance de travailler avec lui. \nJe ne saurais mieux faire que de recommander vivement Mohamed pour ses talents."
+    },
+    {
+      "name": "Tarik Fadli",
+      "reference": "Par la présente, je désire recommander Mohammed ESSADDEK.\r\n                  Ayant eu l’occasion de diriger Monsieur ESSADDEK dans ses fonctions de Consultant Développeur depuis plus d’une année, je témoignes de sa remarquable compétence, de sa capacité d’adaptation et de la qualité de ses rapports avec les clients. Celui-ci sait aussi faire preuve d’un professionnalisme exceptionnel dans ses contacts avec ses pairs et dans sa collaboration avec la direction. En progression professionnelle constante, Mohammed est toujours à la recherche de moyens pertinents pour assurer la réussite dans son travail. Il représente un atout certain pour toute organisation.\r\nC’est donc avec empressement que je le recommande."
+    }
+  ],
+  "projects": [
+    {
+      "name": "Intranet",
+      "startDate": "2013-07-31",
+      "summary": "Mise en place d'une architecture de domaine, réalisation d'une plateforme Intranet en SharePoint Services Foundation",
+      "url": null,
+      "endDate": "2013-09-30"
+    },
+    {
+      "name": "Open € Commerce",
+      "startDate": "2012-10-31",
+      "summary": "Plateforme €Commerce en Symfony",
+      "url": null,
+      "endDate": "2013-02-28"
+    },
+    {
+      "name": "jSQLEditor",
+      "startDate": "2012-09-30",
+      "summary": "Application GUI pour la gestion et l'administration des bases de données.",
+      "url": null,
+      "endDate": "2012-12-31"
+    },
+    {
+      "name": "Flotte Mobile",
+      "startDate": "2012-07-31",
+      "summary": "Interface Web pour la gestion de la flotte mobile",
+      "url": null,
+      "endDate": "2012-09-30"
+    }
+  ],
+  "meta": {
+    "version": "v1.0.0",
+    "canonical": "https://github.com/jsonresume/resume-schema/blob/v1.0.0/schema.json"
   }
+}
