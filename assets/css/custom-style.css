@@ -184,11 +184,19 @@ body::after {
 .cmd {
   position: sticky !important;
   bottom: 0 !important;
-  background: var(--terminal-bg) !important;
+  background: transparent !important;
   padding: 15px 10px !important;
   margin: 0 !important;
-  border-top: 1px solid rgba(0, 255, 65, 0.2);
+  border-top: 1px solid rgba(0, 255, 65, 0.1);
   z-index: 100 !important;
+}
+
+/* Ensure consistent background throughout */
+.terminal-output,
+.terminal-scroller,
+.cmd,
+.cmd-editable {
+  background: transparent !important;
 }
 
 .cmd .cmd-prompt,
