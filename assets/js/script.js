@@ -29,6 +29,8 @@ $(document).ready(function () {
       bold: true,
     },
     extraDetails: "assets/json/resume.json",
+    showHighlights: true,
+    showSummary: true,
     customCommands: [
       {
         name: "spiritanimal",
