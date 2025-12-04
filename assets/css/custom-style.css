@@ -337,6 +337,45 @@ body::after {
   box-shadow: 0 0 15px rgba(0, 217, 255, 0.5);
 }
 
+/* Autocomplete suggestions styling */
+.cmd .cursor-wrapper ul {
+  background: rgba(10, 14, 39, 0.95) !important;
+  border: 1px solid rgba(0, 255, 65, 0.3);
+  border-radius: 6px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 255, 65, 0.2);
+  padding: 5px 0;
+  margin-top: 5px;
+  backdrop-filter: blur(10px);
+}
+
+.cmd .cursor-wrapper li {
+  background: transparent !important;
+  color: #7a7a7a !important;
+  border: none !important;
+  padding: 8px 15px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  transition: all 0.2s ease !important;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.cmd .cursor-wrapper li:hover {
+  background: rgba(0, 255, 65, 0.15) !important;
+  color: var(--primary-color) !important;
+  transform: translateX(5px) !important;
+  padding-left: 20px !important;
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+.cmd .cursor-wrapper li:first-child {
+  border-radius: 6px 6px 0 0;
+}
+
+.cmd .cursor-wrapper li:last-child {
+  border-radius: 0 0 6px 6px;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .terminal {

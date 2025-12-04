@@ -31,6 +31,8 @@ $(document).ready(function () {
     extraDetails: "assets/json/resume.json",
     showHighlights: true,
     showSummary: true,
+    completion: true,
+    caseSensitiveAutocomplete: false,
     customCommands: [
       {
         name: "spiritanimal",
