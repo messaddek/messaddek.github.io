@@ -3,11 +3,11 @@
   "basics": {
     "name": "Mohammed Essaddek",
     "label": "Ingénieur logiciel senior | Expert Technique .NET",
-    "image": "",
+    "image": "images/photo.jpg",
     "email": "mohammed@essaddek.com",
     "phone": "+212 6 64 26 16 12",
     "url": "https://essaddek.com",
-    "summary": "👋 Welcome to my interactive terminal resume!\n\n🚀 I am an accomplished Senior Software Engineer and .NET Technical Expert with 10+ years of experience specializing in .NET technologies, cloud architecture, and DevOps practices. Currently leading technical initiatives at Teal Technology Services (OCP Subsidiary), I excel in architecting scalable solutions and mentoring development teams.\n\n💡 Core Expertise:\n• Languages & Frameworks: C#, .NET Core, ASP.NET MVC, Entity Framework, Angular, TypeScript, JavaScript, Next.js, Hono.js\n• Cloud & DevOps: Microsoft Azure (IoT Hub, Functions, App Services, DevOps), CI/CD, Docker, Infrastructure as Code\n• Database: SQL Server, PostgreSQL, MongoDB, Oracle, MySQL\n• Architecture: Microservices, REST APIs, Event-Driven Design, Feature-Based Architecture\n• Monitoring & Observability: Grafana, Prometheus, Loki\n• Leadership: Technical Architecture, Code Review, Team Mentoring, Agile/Scrum\n• Tools: Visual Studio, VS Code, Azure DevOps, Git, Docker\n\n🎯 Proven track record of delivering mission-critical applications including IoT tracking systems, government portals, enterprise-scale solutions, and SaaS platforms. Passionate about clean code, best practices, and continuous learning.\n\n📍 Based in Morocco | Open to remote opportunities worldwide | Fluent in French, Arabic, and English",
+    "summary": "👋 Bienvenue sur mon CV terminal interactif !\n\n🚀 Je suis un Ingénieur Logiciel Senior et Expert Technique .NET accompli avec plus de 10 ans d'expérience spécialisé dans les technologies .NET, l'architecture cloud et les pratiques DevOps. Actuellement en charge des initiatives techniques chez Teal Technology Services (Filiale OCP), j'excelle dans l'architecture de solutions évolutives et le mentorat d'équipes de développement.\n\n💡 Expertise Principale :\n• Langages & Frameworks : C#, .NET Core, ASP.NET MVC, Entity Framework, Angular, TypeScript, JavaScript, Next.js, Hono.js\n• Cloud & DevOps : Microsoft Azure (IoT Hub, Functions, App Services, DevOps), CI/CD, Docker, Infrastructure as Code\n• Bases de données : SQL Server, PostgreSQL, MongoDB, Oracle, MySQL\n• Architecture : Microservices, API REST, Conception événementielle, Architecture basée sur les fonctionnalités\n• Monitoring & Observabilité : Grafana, Prometheus, Loki\n• Leadership : Architecture Technique, Revue de Code, Mentorat d'Équipe, Agile/Scrum\n• Outils : Visual Studio, VS Code, Azure DevOps, Git, Docker\n\n🎯 Bilan éprouvé de livraison d'applications critiques incluant systèmes de suivi IoT, portails gouvernementaux, solutions à l'échelle de l'entreprise et plateformes SaaS. Passionné par le code propre, les meilleures pratiques et l'apprentissage continu.\n\n📍 Basé au Maroc | Ouvert aux opportunités à distance dans le monde entier | Maîtrise du français, de l'arabe et de l'anglais",
     "location": {
       "countryCode": "MA",
       "address": "Casablanca, Morocco",
@@ -96,20 +96,20 @@
     },
     {
       "company": "Accenture",
-      "position": "Technical Architect, Senior Delivery Analyst",
+      "position": "Architecte Technique, Senior Delivery Analyst",
       "startDate": "2016-09-01",
       "endDate": "2020-06-30",
       "highlights": [
-        "🎯 Led technical architecture for Nexans TMA (.NET scope)",
-        "📡 Architected 'Connected Drums' (Tourets Connectés) IoT GPS tracking platform for industrial cable management",
-        "☁️ Implemented Azure IoT Hub for real-time device telemetry and management",
-        "⚡ Developed serverless solutions using Azure Functions",
-        "🔧 Built RESTful APIs with ASP.NET Web API",
-        "📊 Created Angular 5 dashboard for real-time tracking and analytics",
+        "🎯 Direction de l'architecture technique pour Nexans TMA (périmètre .NET)",
+        "📡 Conception de la plateforme IoT de suivi GPS 'Tourets Connectés' pour la gestion des câbles industriels",
+        "☁️ Implémentation d'Azure IoT Hub pour la télémétrie et la gestion des appareils en temps réel",
+        "⚡ Développement de solutions serverless avec Azure Functions",
+        "🔧 Création d'APIs RESTful avec ASP.NET Web API",
+        "📊 Réalisation d'un tableau de bord Angular 5 pour le suivi et l'analyse en temps réel",
         "💼 Maintenance applicative, analyse des besoins, support client, chiffrage et développement de nouvelles fonctionnalités",
         "🔧 Responsable des périmètres Mantis et PopTs, Administration SharePoint"
       ],
-      "summary": "Client: Nexans - Served as Technical Architect and Business Analyst, responsible for the entire .NET technology stack. Led development of 'Tourets Connectés' (Connected Drums) IoT solution. Environnement technique: Azure IoT Hub, Azure Functions, ASP.NET MVC Web API, EF, Angular 5, Azure DevOps. Also responsible for TMA Nexans projects (Mantis, PopTs, SharePoint Administration).",
+      "summary": "Client: Nexans - En tant qu'Architecte Technique et Analyste, responsable de l'ensemble de la pile technologique .NET. Direction du développement de la solution IoT 'Tourets Connectés'. Environnement technique: Azure IoT Hub, Azure Functions, ASP.NET MVC Web API, EF, Angular 5, Azure DevOps. Également responsable des projets TMA Nexans (Mantis, PopTs, Administration SharePoint).",
       "url": "https://www.linkedin.com/company/accenture/",
       "location": "Casablanca Prefecture, Morocco"
     },

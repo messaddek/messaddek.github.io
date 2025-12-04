@@ -56,6 +56,37 @@
     <link rel="stylesheet" href="assets/css/custom-style.css" />
   </head>
   <body>
+    <!-- Language Selector -->
+    <div
+      class="language-selector"
+      style="
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        display: flex;
+        gap: 10px;
+      "
+    >
+      <button
+        onclick="switchLanguage('en')"
+        id="lang-en"
+        class="lang-btn"
+        title="Switch to English"
+      >
+        🇬🇧 EN
+      </button>
+      <button
+        onclick="switchLanguage('fr')"
+        id="lang-fr"
+        class="lang-btn"
+        title="Passer en Français"
+      >
+        🇫🇷 FR
+      </button>
+    </div>
+
+    <div class="terminal-wrapper"></div>
     <script
       src="https://code.jquery.com/jquery-3.6.1.min.js"
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
@@ -65,5 +96,31 @@
     <script src="assets/js/jquery.terminal-2.34.0.min.js"></script>
     <script src="assets/js/cmd-resume.min.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
+
+    <!-- Language Switcher Script -->
+    <script>
+      function switchLanguage(lang) {
+        localStorage.setItem("resumeLanguage", lang);
+        var url = new URL(window.location);
+        url.searchParams.set("lang", lang);
+        window.location = url.toString();
+      }
+
+      // Highlight active language button
+      document.addEventListener("DOMContentLoaded", function () {
+        var currentLang =
+          localStorage.getItem("resumeLanguage") ||
+          (navigator.language || navigator.userLanguage)
+            .toLowerCase()
+            .startsWith("fr")
+            ? "fr"
+            : "en";
+        var activeBtn = document.getElementById("lang-" + currentLang);
+        if (activeBtn) {
+          activeBtn.style.backgroundColor = "#00ff41";
+          activeBtn.style.color = "#000";
+        }
+      });
+    </script>
   </body>
 </html>

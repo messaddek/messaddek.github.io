@@ -1,15 +1,73 @@
 $(document).ready(function () {
-  // Welcome animation
-  var welcomeMessage = `
+  // Language detection and management
+  // Priority: URL parameter > localStorage > browser language
+  function getLanguageFromURL() {
+    var params = new URLSearchParams(window.location.search);
+    var lang = params.get("lang");
+    if (lang && (lang === "en" || lang === "fr")) {
+      return lang;
+    }
+    return null;
+  }
+
+  function detectBrowserLanguage() {
+    var browserLang = navigator.language || navigator.userLanguage;
+    // Check if browser language starts with 'fr' (French)
+    if (browserLang && browserLang.toLowerCase().startsWith("fr")) {
+      return "fr";
+    }
+    // Default to English
+    return "en";
+  }
+
+  var urlLang = getLanguageFromURL();
+  if (urlLang) {
+    localStorage.setItem("resumeLanguage", urlLang);
+  }
+
+  var currentLanguage =
+    localStorage.getItem("resumeLanguage") || detectBrowserLanguage();
+
+  function getResumeJsonPath(lang) {
+    return "assets/json/resume-" + lang + ".json";
+  }
+
+  var messages = {
+    en: {
+      welcome: `
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
 ║   🚀 Welcome to Mohammed Essaddek's Interactive Resume 🚀    ║
 ║                                                               ║
-║   Type '[[b;#00ff41;]help]' to see available commands        ║
-║   Type '[[b;#00d9ff;]about]' to learn more about me          ║
+║   Type '[[b;#00ff41;]help]' to see available commands         ║
+║   Type '[[b;#00d9ff;]about]' to learn more about me           ║
+║   Type '[[b;#ff8c00;]lang fr]' to switch to French            ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
-    `;
+      `,
+      langChanged: "Language changed to English. Reloading resume...",
+      langCurrent: "Current language: English",
+      langInvalid: "Invalid language. Available languages: en, fr",
+    },
+    fr: {
+      welcome: `
+╔═══════════════════════════════════════════════════════════════╗
+║                                                               ║
+║   🚀 Bienvenue sur le CV Interactif de Mohammed Essaddek 🚀  ║
+║                                                               ║
+║   Tapez '[[b;#00ff41;]help]' pour voir les commandes          ║
+║   Tapez '[[b;#00d9ff;]about]' pour en savoir plus             ║
+║   Tapez '[[b;#ff8c00;]lang en]' pour passer à l'anglais       ║
+║                                                               ║
+╚═══════════════════════════════════════════════════════════════╝
+      `,
+      langChanged: "Langue changée en Français. Rechargement du CV...",
+      langCurrent: "Langue actuelle : Français",
+      langInvalid: "Langue invalide. Langues disponibles : en, fr",
+    },
+  };
+
+  var welcomeMessage = messages[currentLanguage].welcome;
 
   var settings = {
     showForks: false,
@@ -28,12 +86,40 @@ $(document).ready(function () {
       color: "#00ff41",
       bold: true,
     },
-    extraDetails: "assets/json/resume.json",
+    extraDetails: getResumeJsonPath(currentLanguage),
     showHighlights: true,
     showSummary: true,
     completion: true,
     caseSensitiveAutocomplete: false,
     customCommands: [
+      {
+        name: "lang",
+        title: "Language",
+        description:
+          currentLanguage === "en"
+            ? "switch language (usage: lang [en|fr])"
+            : "changer de langue (usage: lang [en|fr])",
+        type: "system",
+        handler: function (lang) {
+          if (!lang) {
+            return messages[currentLanguage].langCurrent;
+          }
+          lang = lang.toLowerCase().trim();
+          if (lang === "en" || lang === "fr") {
+            if (lang !== currentLanguage) {
+              localStorage.setItem("resumeLanguage", lang);
+              setTimeout(function () {
+                location.reload();
+              }, 500);
+              return messages[currentLanguage].langChanged;
+            } else {
+              return messages[currentLanguage].langCurrent;
+            }
+          } else {
+            return messages[currentLanguage].langInvalid;
+          }
+        },
+      },
       {
         name: "spiritanimal",
         title: "Spirit Animal",
@@ -101,11 +187,43 @@ $(document).ready(function () {
           return "The great city of " + data.city;
         },
       },
+      {
+        name: "contact",
+        title: "Contact Information",
+        description: "how to reach me",
+        type: "calculated",
+        data: ["basics"],
+        dataIsObject: true,
+        handler: function (data) {
+          var contact = [];
+          if (data.email) contact.push("📧 Email: " + data.email);
+          if (data.phone) contact.push("📱 Phone: " + data.phone);
+          if (data.url) contact.push("🌐 Website: " + data.url);
+          return contact.join("\n");
+        },
+      },
+      {
+        name: "email",
+        title: "Email",
+        description: "email address",
+        type: "basic",
+        data: ["basics", "email"],
+      },
+      {
+        name: "phone",
+        title: "Phone",
+        description: "phone number",
+        type: "basic",
+        data: ["basics", "phone"],
+      },
     ],
   };
 
   // Initialize terminal with custom settings
-  var term = $("body").CMDResume("assets/json/resume.json", settings);
+  var term = $(".terminal-wrapper").CMDResume(
+    getResumeJsonPath(currentLanguage),
+    settings
+  );
 
   // Add welcome message after initialization
   setTimeout(function () {

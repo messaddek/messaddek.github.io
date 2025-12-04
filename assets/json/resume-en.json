@@ -2,8 +2,8 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Mohammed Essaddek",
-    "label": "Ingénieur logiciel senior | Expert Technique .NET",
-    "image": "",
+    "label": "Senior Software Engineer | .NET Technical Expert",
+    "image": "images/photo.jpg",
     "email": "mohammed@essaddek.com",
     "phone": "+212 6 64 26 16 12",
     "url": "https://essaddek.com",
@@ -25,31 +25,31 @@
   "work": [
     {
       "company": "Teal Technology Services (OCP Subsidiary)",
-      "position": "Lead Architecte & Développeur Full Stack",
+      "position": "Lead Architect & Full Stack Developer",
       "startDate": "2025-03-01",
       "endDate": "",
       "highlights": [
-        "🏗️ Architecture Moderne: Conception d'une architecture Feature-Based haute performance",
-        "🚀 DevOps & Observabilité: Mise en place d'une infrastructure conteneurisée robuste et d'une stack de monitoring complète pour assurer la haute disponibilité",
-        "🔒 Sécurité & Logique Métier: Implémentation de workflows d'approbation complexes, moteur de calcul de jours ouvrés, et gestion avancée des droits (RBAC)",
-        "💻 Expérience Utilisateur: Développement d'une interface réactive pour une gestion fluide des états"
+        "🏗️ Modern Architecture: Designed high-performance Feature-Based architecture",
+        "🚀 DevOps & Observability: Established robust containerized infrastructure and complete monitoring stack to ensure high availability",
+        "🔒 Security & Business Logic: Implemented complex approval workflows, business day calculation engine, and advanced rights management (RBAC)",
+        "💻 User Experience: Developed responsive interface for smooth state management"
       ],
-      "summary": "Conception de bout en bout d'une plateforme SaaS modulaire pour la digitalisation des processus RH (Leave Management System). Environnement technique: Next.js 14, TypeScript, Hono.js, Docker, Grafana, Prometheus, Loki, Azure AD, Tailwind CSS.",
+      "summary": "End-to-end design of a modular SaaS platform for HR process digitalization (Leave Management System). Technical environment: Next.js 14, TypeScript, Hono.js, Docker, Grafana, Prometheus, Loki, Azure AD, Tailwind CSS.",
       "url": "https://www.linkedin.com/company/teal-technology-services/",
       "location": "Casablanca, Morocco"
     },
     {
       "company": "Teal Technology Services (OCP Subsidiary)",
-      "position": "Expert Technique .NET",
+      "position": ".NET Technical Expert",
       "startDate": "2024-09-01",
       "endDate": "2025-02-28",
       "highlights": [
-        "🎯 Apporter une expertise technique pour les projets complexes et fournir des solutions techniques avancées",
-        "💰 Participer à l'estimation des charges de travail et des coûts liés aux projets",
-        "👥 Assister les équipes dans la conception, le développement, et la mise en œuvre des solutions techniques",
-        "🤝 Collaborer avec les parties prenantes pour garantir la conformité aux exigences techniques"
+        "🎯 Provide technical expertise for complex projects and deliver advanced technical solutions",
+        "💰 Participate in estimating workloads and project costs",
+        "👥 Assist teams in design, development, and implementation of technical solutions",
+        "🤝 Collaborate with stakeholders to ensure compliance with technical requirements"
       ],
-      "summary": "Assurer l'expertise technique, chiffrage, et assistance des équipes sur les projets en cours. Client: OCP. Environnement technique: .NET Core, .NET Standard, C#, ASP.NET, Azure (App Services, Functions), Docker, DevOps, SQLServer, GIT.",
+      "summary": "Ensure technical expertise, estimation, and team assistance on ongoing projects. Client: OCP. Technical environment: .NET Core, .NET Standard, C#, ASP.NET, Azure (App Services, Functions), Docker, DevOps, SQL Server, GIT.",
       "url": "https://www.linkedin.com/company/teal-technology-services/",
       "location": "Casablanca, Morocco"
     },
@@ -59,25 +59,25 @@
       "startDate": "2022-01-01",
       "endDate": "2024-08-31",
       "highlights": [
-        "👥 Gestion et suivi de la productivité de l'équipe conformément aux SLA des clients",
-        "🔧 Offrir des conseils techniques à l'équipe, y compris le dépannage et la résolution de problèmes",
-        "💡 Fournir une assistance technique sur la pile technologique (infrastructure et applicatif)",
-        "🔗 Liaison entre l'équipe et les parties prenantes"
+        "👥 Manage and monitor team productivity in accordance with client SLAs",
+        "🔧 Provide technical guidance to the team, including troubleshooting and problem resolution",
+        "💡 Deliver technical assistance on the technology stack (infrastructure and application)",
+        "🔗 Liaison between the team and stakeholders"
       ],
-      "summary": "Diriger l'équipe Custom Build, garantir le respect des SLA, et fournir un leadership technique. Client: OCP. Environnement technique: .NET Core, .NET Standard, Azure, Docker, DevOps, SQLServer.",
+      "summary": "Lead the Custom Build team, ensure SLA compliance, and provide technical leadership. Client: OCP. Technical environment: .NET Core, .NET Standard, Azure, Docker, DevOps, SQL Server.",
       "url": "https://www.linkedin.com/company/teal-technology-services/",
       "location": "Casablanca, Morocco"
     },
     {
       "company": "AKKA Technologies",
-      "position": "Ingénieur logiciel senior",
+      "position": "Senior Software Engineer",
       "startDate": "2021-02-01",
       "endDate": "2021-12-31",
       "highlights": [
-        "🔗 Développement des fonctionnalités principales et intégration fluide (Connexion avec marketplaces internationales)",
-        "🧪 Rédaction et exécution des tests unitaires et tests d'intégration (Pacts et Gherkin)"
+        "🔗 Development of core features and seamless integration (Connection with international marketplaces)",
+        "🧪 Writing and execution of unit tests and integration tests (Pacts and Gherkin)"
       ],
-      "summary": "Client: Cdiscount | Projet: Marketplace As A Service (MAAS). Environnement technique: .NET Core, .NET Standard, Azure DevOps, Docker, KafkaStream, MongoDb.",
+      "summary": "Client: Cdiscount | Project: Marketplace As A Service (MAAS). Technical environment: .NET Core, .NET Standard, Azure DevOps, Docker, KafkaStream, MongoDB.",
       "url": "https://www.linkedin.com/company/akka-technologies/",
       "location": "Casablanca Metropolitan Area"
     },
@@ -87,10 +87,10 @@
       "startDate": "2020-06-01",
       "endDate": "2021-02-28",
       "highlights": [
-        "🏗️ Réalisation de l'architecture applicative en .NET Core MVC et API",
-        "💻 Développement des applications et implémentation du pipeline DevOps"
+        "🏗️ Implementation of application architecture in .NET Core MVC and API",
+        "💻 Application development and DevOps pipeline implementation"
       ],
-      "summary": "Client: Ministère des Affaires Étrangères Maroc | Projet: Portail rdv.consulat.ma - Spearheaded the complete modernization of Morocco's consular appointment platform (https://rdv.consulat.ma/). Environnement technique: .NET Core, .NET Standard, Azure DevOps, Linux RedHat.",
+      "summary": "Client: Moroccan Ministry of Foreign Affairs | Project: Portal rdv.consulat.ma - Spearheaded the complete modernization of Morocco's consular appointment platform (https://rdv.consulat.ma/). Technical environment: .NET Core, .NET Standard, Azure DevOps, Linux RedHat.",
       "url": "https://rdv.consulat.ma/",
       "location": "Skhirate Témara, Rabat-Salé-Kénitra, Morocco"
     },
@@ -101,61 +101,61 @@
       "endDate": "2020-06-30",
       "highlights": [
         "🎯 Led technical architecture for Nexans TMA (.NET scope)",
-        "📡 Architected 'Connected Drums' (Tourets Connectés) IoT GPS tracking platform for industrial cable management",
+        "📡 Architected 'Connected Drums' IoT GPS tracking platform for industrial cable management",
         "☁️ Implemented Azure IoT Hub for real-time device telemetry and management",
         "⚡ Developed serverless solutions using Azure Functions",
         "🔧 Built RESTful APIs with ASP.NET Web API",
         "📊 Created Angular 5 dashboard for real-time tracking and analytics",
-        "💼 Maintenance applicative, analyse des besoins, support client, chiffrage et développement de nouvelles fonctionnalités",
-        "🔧 Responsable des périmètres Mantis et PopTs, Administration SharePoint"
+        "💼 Application maintenance, requirements analysis, client support, estimation and development of new features",
+        "🔧 Responsible for Mantis and PopTs scopes, SharePoint Administration"
       ],
-      "summary": "Client: Nexans - Served as Technical Architect and Business Analyst, responsible for the entire .NET technology stack. Led development of 'Tourets Connectés' (Connected Drums) IoT solution. Environnement technique: Azure IoT Hub, Azure Functions, ASP.NET MVC Web API, EF, Angular 5, Azure DevOps. Also responsible for TMA Nexans projects (Mantis, PopTs, SharePoint Administration).",
+      "summary": "Client: Nexans - Served as Technical Architect and Business Analyst, responsible for the entire .NET technology stack. Led development of 'Connected Drums' IoT solution. Technical environment: Azure IoT Hub, Azure Functions, ASP.NET MVC Web API, EF, Angular 5, Azure DevOps. Also responsible for TMA Nexans projects (Mantis, PopTs, SharePoint Administration).",
       "url": "https://www.linkedin.com/company/accenture/",
       "location": "Casablanca Prefecture, Morocco"
     },
     {
       "company": "OCP SA",
-      "position": "Consultant .NET",
+      "position": ".NET Consultant",
       "startDate": "2015-12-01",
       "endDate": "2016-05-31",
       "highlights": [],
-      "summary": "Projet: Plateforme de reporting environnemental. Développement d'une Application Reporting Environnemental sous l'environnement ASP.NET MVC 5, SQL Server 2008. Mission: Étude du besoin, Conception, Mise en place de l'architecture applicative, réalisation de la solution.",
+      "summary": "Project: Environmental reporting platform. Development of an Environmental Reporting Application using ASP.NET MVC 5, SQL Server 2008. Mission: Requirements analysis, Design, Application architecture setup, solution implementation.",
       "url": "https://www.linkedin.com/company/ocp/",
       "location": "Casablanca"
     },
     {
       "company": "Algo Consulting Group",
-      "position": "Consultant .NET",
+      "position": ".NET Consultant",
       "startDate": "2014-12-01",
       "endDate": "2015-11-30",
       "highlights": [],
-      "summary": "Projet: SIV pour LGV ONCF - Participation à la mise en place du Système Informations Voyageurs, pour l'Office National des Chemins de Fer. Environnement technique: WPF, MVVM, SQL Server 2012, Telerik, TFS.",
+      "summary": "Project: SIV for LGV ONCF - Participation in the implementation of the Passenger Information System for the National Railway Office. Technical environment: WPF, MVVM, SQL Server 2012, Telerik, TFS.",
       "url": "https://www.linkedin.com/company/algo-consulting-group/",
       "location": "Rabat"
     },
     {
       "company": "Direction Générale des Impôts",
-      "position": "Stagiaire",
+      "position": "Intern",
       "startDate": "2014-02-28",
       "endDate": "2014-06-30",
       "highlights": [],
-      "summary": "Etude Conception Réalisation d'une plateforme de gestion des carrières.",
+      "summary": "Study, Design and Implementation of a career management platform.",
       "url": "https://www.linkedin.com/company/direction-g-n-rale-des-imp-ts/",
       "location": "Rabat"
     },
     {
       "company": "Ministère de l'économie et des Finances",
-      "position": "Stagiaire",
+      "position": "Intern",
       "startDate": "2013-07-31",
       "endDate": "2013-09-30",
       "highlights": [],
-      "summary": "Etude, conception et réalisation d'un portail intranet.",
+      "summary": "Study, design and implementation of an intranet portal.",
       "url": "https://www.linkedin.com/company/emff/",
       "location": "Rabat"
     },
     {
       "company": "Centrale Laitière",
-      "position": "Stagiaire",
+      "position": "Intern",
       "startDate": "2012-07-31",
       "endDate": "2012-09-30",
       "highlights": [],
@@ -167,8 +167,8 @@
   "education": [
     {
       "institution": "École Nationale des Sciences Appliquées de Oujda-ENSAO",
-      "area": "Qualité du Logiciel",
-      "studyType": "Diplôme d'ingénieur",
+      "area": "Software Quality",
+      "studyType": "Engineering Degree",
       "startDate": "2011-12-31",
       "endDate": "2014-12-31",
       "score": "",
@@ -177,7 +177,7 @@
     {
       "institution": "Ecole Nationale des Sciences Appliquées d'Al Hoceima",
       "area": "",
-      "studyType": "Cycle préparatoire",
+      "studyType": "Preparatory Cycle",
       "startDate": "2009-12-31",
       "endDate": "2011-12-31",
       "score": "",
@@ -185,8 +185,8 @@
     },
     {
       "institution": "Lycé Omar Ibn Abdelaziz",
-      "area": "Sciences Mathématiques B",
-      "studyType": "Baccalauréat",
+      "area": "Mathematical Sciences B",
+      "studyType": "Baccalaureate",
       "startDate": "2008-12-31",
       "endDate": "2009-12-31",
       "score": "",
@@ -229,7 +229,7 @@
       "url": "https://www.youracclaim.com/badges/249b3ce5-3ffb-4e0e-9e20-6437ca660fde/linked_in_profile"
     },
     {
-      "name": "Les fondamentaux d’ASP.NET MVC 5",
+      "name": "ASP.NET MVC 5 Fundamentals",
       "issuer": "LinkedIn",
       "startDate": "2017-03-31",
       "url": "http://www.linkedin.com/learning/les-fondamentaux-d-asp-net-mvc-5?trk=flagship-lil_details_certification"
@@ -354,7 +354,7 @@
       "keywords": []
     },
     {
-      "name": "Architecture logicielle",
+      "name": "Software Architecture",
       "level": "",
       "keywords": []
     },
@@ -376,59 +376,59 @@
   ],
   "languages": [
     {
-      "language": "Arabe",
-      "fluency": "Maternelle"
+      "language": "Arabic",
+      "fluency": "Native"
     },
     {
-      "language": "Français",
-      "fluency": "Bilingue"
+      "language": "French",
+      "fluency": "Bilingual"
     },
     {
-      "language": "Anglais",
-      "fluency": "Technique"
+      "language": "English",
+      "fluency": "Technical"
     },
     {
-      "language": "Berbère",
-      "fluency": "Conversationnel"
+      "language": "Berber",
+      "fluency": "Conversational"
     }
   ],
   "interests": [],
   "references": [
     {
       "name": "Yassine  AIT ELBAZ",
-      "reference": "Il est difficile de décrire comment le travail de Mohamed m'a impressionné quand j'ai eu la chance de travailler avec lui. \nJe ne saurais mieux faire que de recommander vivement Mohamed pour ses talents."
+      "reference": "It is difficult to describe how impressed I was with Mohamed's work when I had the opportunity to work with him. I could not do better than to highly recommend Mohamed for his talents."
     },
     {
       "name": "Tarik Fadli",
-      "reference": "Par la présente, je désire recommander Mohammed ESSADDEK.\r\n                  Ayant eu l’occasion de diriger Monsieur ESSADDEK dans ses fonctions de Consultant Développeur depuis plus d’une année, je témoignes de sa remarquable compétence, de sa capacité d’adaptation et de la qualité de ses rapports avec les clients. Celui-ci sait aussi faire preuve d’un professionnalisme exceptionnel dans ses contacts avec ses pairs et dans sa collaboration avec la direction. En progression professionnelle constante, Mohammed est toujours à la recherche de moyens pertinents pour assurer la réussite dans son travail. Il représente un atout certain pour toute organisation.\r\nC’est donc avec empressement que je le recommande."
+      "reference": "I hereby wish to recommend Mohammed ESSADDEK. Having had the opportunity to supervise Mr. ESSADDEK in his role as Development Consultant for over a year, I testify to his remarkable competence, adaptability and quality of his relationships with clients. He also demonstrates exceptional professionalism in his contacts with his peers and in his collaboration with management. Constantly progressing professionally, Mohammed is always looking for relevant ways to ensure success in his work. He represents a definite asset for any organization. It is therefore with eagerness that I recommend him."
     }
   ],
   "projects": [
     {
       "name": "Intranet",
       "startDate": "2013-07-31",
-      "summary": "Mise en place d'une architecture de domaine, réalisation d'une plateforme Intranet en SharePoint Services Foundation",
+      "summary": "Implementation of a domain architecture, creation of an Intranet platform using SharePoint Services Foundation",
       "url": null,
       "endDate": "2013-09-30"
     },
     {
-      "name": "Open € Commerce",
+      "name": "Open E-Commerce",
       "startDate": "2012-10-31",
-      "summary": "Plateforme €Commerce en Symfony",
+      "summary": "E-Commerce platform built with Symfony",
       "url": null,
       "endDate": "2013-02-28"
     },
     {
       "name": "jSQLEditor",
       "startDate": "2012-09-30",
-      "summary": "Application GUI pour la gestion et l'administration des bases de données.",
+      "summary": "GUI application for database management and administration.",
       "url": null,
       "endDate": "2012-12-31"
     },
     {
-      "name": "Flotte Mobile",
+      "name": "Mobile Fleet",
       "startDate": "2012-07-31",
-      "summary": "Interface Web pour la gestion de la flotte mobile",
+      "summary": "Web interface for mobile fleet management",
       "url": null,
       "endDate": "2012-09-30"
     }
