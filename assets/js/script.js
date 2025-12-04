@@ -55,7 +55,7 @@ $(document).ready(function () {
 ║                                                               ║
 ║   🚀 Bienvenue sur le CV Interactif de Mohammed Essaddek 🚀     ║
 ║                                                               ║
-║   Tapez '[[b;#00ff41;]help]' pour voir les commandes                       ║
+║   Tapez '[[b;#00ff41;]help]' pour voir les commandes                        ║
 ║   Tapez '[[b;#00d9ff;]about]' pour en savoir plus                           ║
 ║   Tapez '[[b;#ff8c00;]lang en]' pour passer à l'anglais                     ║
 ║                                                               ║
@@ -268,7 +268,7 @@ $(document).ready(function () {
   }
 
   // Ensure scroll to bottom on init
-  setTimeout(scrollToBottom, 500);
+  // setTimeout(scrollToBottom, 500);
 
   // Add custom styling and animations
   $(document)
@@ -336,7 +336,7 @@ $(document).ready(function () {
     // Ensure we are focused on the terminal
     if (term && (term.term || term.echo)) {
       // Scroll on any key press to keep cursor in view
-      setTimeout(scrollToBottom, 10);
+      // setTimeout(scrollToBottom, 10);
     }
   });
 });
