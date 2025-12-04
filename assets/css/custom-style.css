@@ -139,7 +139,7 @@ body::after {
   border-radius: 10px 10px 0 0;
   border-bottom: 1px solid var(--primary-color);
   position: relative;
-  margin: -10px -10px 10px -10px;
+  margin: 0 0 10px 0;
 }
 
 /* Terminal buttons */
