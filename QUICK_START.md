@@ -5,11 +5,13 @@
 When you open the site, you'll see an interactive terminal. Here are the commands you can use:
 
 ### Basic Commands
+
 - `help` - Display all available commands
 - `about` - Show detailed information about Mohammed
 - `clear` - Clear the terminal screen
 
 ### Professional Information
+
 - `experience` or `work` - View work history and experience
 - `education` - Display educational background
 - `skills` - List technical skills and expertise
@@ -17,12 +19,14 @@ When you open the site, you'll see an interactive terminal. Here are the command
 - `projects` - View notable projects
 
 ### Contact & Links
+
 - `contact` - Get contact information
 - `linkedin` - View LinkedIn profile
 - `github` - View GitHub profile (if configured)
 - `email` - Display email address
 
 ### Fun Commands (if configured)
+
 - `location` - Current location
 - `geolocation` - Check geolocation support
 - `spiritanimal` - Fun fact (if configured)
@@ -54,23 +58,28 @@ When you open the site, you'll see an interactive terminal. Here are the command
 ## 🌐 Deployment
 
 ### GitHub Pages (Already configured)
+
 Your site is at: `https://messaddek.github.io`
 
 ### Local Testing
+
 1. Open `index.html` directly in your browser, or
 2. Use a local server:
+
    ```bash
    # Python 3
    python -m http.server 8000
-   
+
    # Node.js
    npx http-server
    ```
+
 3. Navigate to `http://localhost:8000`
 
 ## 📱 Mobile Experience
 
 The site is fully responsive:
+
 - Adapts to screen size
 - Touch-friendly interface
 - Readable fonts on small screens
