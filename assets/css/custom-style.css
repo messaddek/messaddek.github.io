@@ -28,6 +28,8 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
 }
 
 /* Animated background particles */
@@ -103,6 +105,8 @@ body::after {
   align-items: center;
   justify-content: center;
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Terminal container styling */
@@ -115,10 +119,9 @@ body::after {
   backdrop-filter: blur(10px);
   position: relative;
   z-index: 1;
-  margin: 20px;
+  margin: 0 auto;
+  width: 100%;
   max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
   font-size: 16px;
   line-height: 1.6;
   animation: terminalFadeIn 1s ease-out;
@@ -180,6 +183,7 @@ body::after {
   flex-direction: column;
   min-height: 400px;
   max-height: calc(100vh - 60px);
+  overflow: hidden;
 }
 
 .terminal-scroller {
@@ -386,11 +390,46 @@ body::after {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
   .terminal {
-    margin: 10px;
+    max-width: 95%;
+    font-size: 15px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .terminal-wrapper {
+    padding: 10px;
+  }
+
+  .terminal {
+    width: 100%;
+    max-width: 100%;
     font-size: 14px;
     border-radius: 8px;
+    min-height: 300px;
+    max-height: calc(100vh - 40px);
+  }
+
+  .terminal::before {
+    height: 25px;
+  }
+
+  .terminal::after {
+    top: 8px;
+    left: 12px;
+    width: 10px;
+    height: 10px;
+    box-shadow: 18px 0 0 #ffbd2e, 36px 0 0 #27c93f,
+      0 0 3px rgba(255, 95, 86, 0.5), 18px 0 3px rgba(255, 189, 46, 0.5),
+      36px 0 3px rgba(39, 201, 63, 0.5);
+  }
+
+  .terminal,
+  .cmd {
+    font-size: 14px !important;
   }
 
   body::after {
@@ -398,16 +437,74 @@ body::after {
   }
 }
 
+/* Mobile phones */
 @media (max-width: 480px) {
+  .terminal-wrapper {
+    padding: 5px;
+  }
+
   .terminal {
-    margin: 5px;
+    width: 100%;
+    max-width: 100%;
     font-size: 13px;
     border-radius: 6px;
+    border-width: 1px;
+    min-height: 250px;
+    max-height: calc(100vh - 20px);
+  }
+
+  .terminal::before {
+    height: 20px;
+  }
+
+  .terminal::after {
+    top: 6px;
+    left: 10px;
+    width: 8px;
+    height: 8px;
+    box-shadow: 16px 0 0 #ffbd2e, 32px 0 0 #27c93f,
+      0 0 2px rgba(255, 95, 86, 0.5), 16px 0 2px rgba(255, 189, 46, 0.5),
+      32px 0 2px rgba(39, 201, 63, 0.5);
+  }
+
+  .terminal,
+  .cmd {
+    font-size: 13px !important;
+    letter-spacing: 0.3px;
   }
 
   .cmd .cmd-prompt,
   .terminal .cmd-prompt {
     font-size: 13px !important;
+  }
+
+  .cmd {
+    padding: 10px 8px !important;
+  }
+
+  body::after {
+    background-size: 20px 20px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .terminal-wrapper {
+    padding: 3px;
+  }
+
+  .terminal {
+    font-size: 12px;
+    border-radius: 4px;
+  }
+
+  .terminal,
+  .cmd {
+    font-size: 12px !important;
+  }
+
+  .cmd {
+    padding: 8px 6px !important;
   }
 }
 
@@ -579,5 +676,19 @@ body::after {
   .lang-btn {
     padding: 6px 12px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .language-selector {
+    top: 8px;
+    right: 8px;
+    gap: 4px;
+  }
+
+  .lang-btn {
+    padding: 5px 10px;
+    font-size: 11px;
+    border-width: 1px;
   }
 }

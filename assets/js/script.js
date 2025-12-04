@@ -216,6 +216,21 @@ $(document).ready(function () {
         type: "basic",
         data: ["basics", "phone"],
       },
+      {
+        name: "photo",
+        title: "Photo",
+        description: "display profile photo",
+        type: "system",
+        handler: function () {
+          var isMobile = window.innerWidth <= 768;
+          var size = isMobile ? "150px" : "200px";
+          return (
+            '<div style="text-align: center; margin: 20px 0;"><img src="images/photo.jpg" alt="Mohammed Essaddek" style="max-width: ' +
+            size +
+            '; height: auto; border-radius: 50%; border: 3px solid #00ff41; box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);"/></div>'
+          );
+        },
+      },
     ],
   };
 
