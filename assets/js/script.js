@@ -124,6 +124,30 @@ $(document).ready(function () {
     "scroll-behavior": "smooth",
   });
 
+  // Auto-scroll to bottom after output
+  function scrollToBottom() {
+    var scroller = $(".terminal-scroller");
+    if (scroller.length) {
+      scroller.scrollTop(scroller[0].scrollHeight);
+    }
+  }
+
+  // Monitor for new content and scroll
+  var observer = new MutationObserver(function () {
+    setTimeout(scrollToBottom, 100);
+  });
+
+  // Observe terminal output for changes
+  setTimeout(function () {
+    var terminalOutput = document.querySelector(".terminal-output");
+    if (terminalOutput) {
+      observer.observe(terminalOutput, {
+        childList: true,
+        subtree: true,
+      });
+    }
+  }, 500);
+
   // Add typing sound effect (optional - visual feedback)
   var typingIndicator = false;
   $(document).on("keypress", ".cmd", function () {
