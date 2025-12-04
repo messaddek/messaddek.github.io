@@ -39,9 +39,9 @@ $(document).ready(function () {
 ║                                                               ║
 ║   🚀 Welcome to Mohammed Essaddek's Interactive Resume 🚀       ║
 ║                                                               ║
-║   Type '[[b;#00ff41;]help]' to see available commands                       ║
-║   Type '[[b;#00d9ff;]about]' to learn more about me                         ║
-║   Type '[[b;#ff8c00;]lang fr]' to switch to French                          ║
+║   Type '[[b;#00ff41;]help]' to see available commands                        ║
+║   Type '[[b;#00d9ff;]about]' to learn more about me                          ║
+║   Type '[[b;#ff8c00;]lang fr]' to switch to French                           ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
       `,
@@ -55,9 +55,9 @@ $(document).ready(function () {
 ║                                                               ║
 ║   🚀 Bienvenue sur le CV Interactif de Mohammed Essaddek 🚀   ║
 ║                                                               ║
-║   Tapez '[[b;#00ff41;]help]' pour voir les commandes                        ║
-║   Tapez '[[b;#00d9ff;]about]' pour en savoir plus                           ║
-║   Tapez '[[b;#ff8c00;]lang en]' pour passer à l'anglais                     ║
+║   Tapez '[[b;#00ff41;]help]' pour voir les commandes                         ║
+║   Tapez '[[b;#00d9ff;]about]' pour en savoir plus                            ║
+║   Tapez '[[b;#ff8c00;]lang en]' pour passer à l'anglais                      ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
       `,
@@ -249,16 +249,19 @@ $(document).ready(function () {
   );
 
   // Patch commandLineParse to handle arguments for 'lang' command
-  if (term && term.commandLineParse) {
-    var originalParse = term.commandLineParse;
-    term.commandLineParse = function (name, args) {
+  // The CMDResume plugin attaches the internal object to the jQuery object as .CMDResume
+  var internalTerm = term.CMDResume || term;
+
+  if (internalTerm && internalTerm.commandLineParse) {
+    var originalParse = internalTerm.commandLineParse;
+    internalTerm.commandLineParse = function (name, args) {
       if (name === "lang") {
         var langArg = args[0];
-        if (term.commands && term.commands.lang) {
-          return term.commands.lang.handler(langArg);
+        if (internalTerm.commands && internalTerm.commands.lang) {
+          return internalTerm.commands.lang.handler(langArg);
         }
       }
-      return originalParse.apply(term, [name, args]);
+      return originalParse.apply(internalTerm, [name, args]);
     };
   }
 
@@ -285,20 +288,20 @@ $(document).ready(function () {
   }
 
   // Monitor for new content and scroll
-  // var observer = new MutationObserver(function () {
-  //   setTimeout(scrollToBottom, 100);
-  // });
+  var observer = new MutationObserver(function () {
+    setTimeout(scrollToBottom, 100);
+  });
 
   // Observe terminal output for changes
-  // setTimeout(function () {
-  //   var terminalOutput = document.querySelector(".terminal-output");
-  //   if (terminalOutput) {
-  //     observer.observe(terminalOutput, {
-  //       childList: true,
-  //       subtree: true,
-  //     });
-  //   }
-  // }, 500);
+  setTimeout(function () {
+    var terminalOutput = document.querySelector(".terminal-output");
+    if (terminalOutput) {
+      observer.observe(terminalOutput, {
+        childList: true,
+        subtree: true,
+      });
+    }
+  }, 500);
 
   // Add typing sound effect (optional - visual feedback)
   var typingIndicator = false;
@@ -321,18 +324,14 @@ $(document).ready(function () {
     }
   });
 
-  // Fix for mobile "Enter" key behavior
+  // Fix for mobile "Enter" key behavior and general typing scroll
   // Some mobile keyboards trigger a keydown with keyCode 13 (Enter) which might be interpreted prematurely
-  // We ensure that the terminal handles it correctly
+  // We ensure that the terminal handles it correctly and scrolls on typing
   $(document).on("keydown", function (e) {
-    // If it's an Enter key on mobile (often keyCode 13 or 229)
-    if (e.which === 13 || e.keyCode === 13) {
-      // Ensure we are focused on the terminal
-      if (term && term.term) {
-        // Let jquery.terminal handle it, but we can add custom logic if needed
-        // For now, we just ensure the view is scrolled
-        setTimeout(scrollToBottom, 10);
-      }
+    // Ensure we are focused on the terminal
+    if (term && (term.term || term.echo)) {
+      // Scroll on any key press to keep cursor in view
+      setTimeout(scrollToBottom, 10);
     }
   });
 });
