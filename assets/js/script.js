@@ -39,9 +39,9 @@ $(document).ready(function () {
 ║                                                               ║
 ║   🚀 Welcome to Mohammed Essaddek's Interactive Resume 🚀       ║
 ║                                                               ║
-║   Type '[[b;#00ff41;]help]' to see available commands                        ║
+║   Type '[[b;#00ff41;]help]' to see available commands                       ║
 ║   Type '[[b;#00d9ff;]about]' to learn more about me                          ║
-║   Type '[[b;#ff8c00;]lang fr]' to switch to French                           ║
+║   Type '[[b;#ff8c00;]lang fr]' to switch to French                          ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
       `,
@@ -53,11 +53,11 @@ $(document).ready(function () {
       welcome: `
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
-║   🚀 Bienvenue sur le CV Interactif de Mohammed Essaddek 🚀   ║
+║   🚀 Bienvenue sur le CV Interactif de Mohammed Essaddek 🚀     ║
 ║                                                               ║
-║   Tapez '[[b;#00ff41;]help]' pour voir les commandes                         ║
-║   Tapez '[[b;#00d9ff;]about]' pour en savoir plus                            ║
-║   Tapez '[[b;#ff8c00;]lang en]' pour passer à l'anglais                      ║
+║   Tapez '[[b;#00ff41;]help]' pour voir les commandes                       ║
+║   Tapez '[[b;#00d9ff;]about]' pour en savoir plus                           ║
+║   Tapez '[[b;#ff8c00;]lang en]' pour passer à l'anglais                     ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
       `,
@@ -109,7 +109,9 @@ $(document).ready(function () {
             if (lang !== currentLanguage) {
               localStorage.setItem("resumeLanguage", lang);
               setTimeout(function () {
-                location.reload();
+                var url = new URL(window.location);
+                url.searchParams.set("lang", lang);
+                window.location = url.toString();
               }, 500);
               return messages[currentLanguage].langChanged;
             } else {
@@ -265,6 +267,9 @@ $(document).ready(function () {
     };
   }
 
+  // Ensure scroll to bottom on init
+  setTimeout(scrollToBottom, 500);
+
   // Add custom styling and animations
   $(document)
     .on("mouseenter", ".terminal a[href]", function () {
@@ -288,20 +293,20 @@ $(document).ready(function () {
   }
 
   // Monitor for new content and scroll
-  var observer = new MutationObserver(function () {
-    setTimeout(scrollToBottom, 100);
-  });
+  // var observer = new MutationObserver(function () {
+  //   setTimeout(scrollToBottom, 100);
+  // });
 
   // Observe terminal output for changes
-  setTimeout(function () {
-    var terminalOutput = document.querySelector(".terminal-output");
-    if (terminalOutput) {
-      observer.observe(terminalOutput, {
-        childList: true,
-        subtree: true,
-      });
-    }
-  }, 500);
+  // setTimeout(function () {
+  //   var terminalOutput = document.querySelector(".terminal-output");
+  //   if (terminalOutput) {
+  //     observer.observe(terminalOutput, {
+  //       childList: true,
+  //       subtree: true,
+  //     });
+  //   }
+  // }, 500);
 
   // Add typing sound effect (optional - visual feedback)
   var typingIndicator = false;
