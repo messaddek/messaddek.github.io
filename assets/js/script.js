@@ -37,11 +37,11 @@ $(document).ready(function () {
       welcome: `
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
-║   🚀 Welcome to Mohammed Essaddek's Interactive Resume 🚀    ║
+║   🚀 Welcome to Mohammed Essaddek's Interactive Resume 🚀       ║
 ║                                                               ║
-║   Type '[[b;#00ff41;]help]' to see available commands         ║
-║   Type '[[b;#00d9ff;]about]' to learn more about me           ║
-║   Type '[[b;#ff8c00;]lang fr]' to switch to French            ║
+║   Type '[[b;#00ff41;]help]' to see available commands                       ║
+║   Type '[[b;#00d9ff;]about]' to learn more about me                         ║
+║   Type '[[b;#ff8c00;]lang fr]' to switch to French                          ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
       `,
@@ -53,11 +53,11 @@ $(document).ready(function () {
       welcome: `
 ╔═══════════════════════════════════════════════════════════════╗
 ║                                                               ║
-║   🚀 Bienvenue sur le CV Interactif de Mohammed Essaddek 🚀  ║
+║   🚀 Bienvenue sur le CV Interactif de Mohammed Essaddek 🚀   ║
 ║                                                               ║
-║   Tapez '[[b;#00ff41;]help]' pour voir les commandes          ║
-║   Tapez '[[b;#00d9ff;]about]' pour en savoir plus             ║
-║   Tapez '[[b;#ff8c00;]lang en]' pour passer à l'anglais       ║
+║   Tapez '[[b;#00ff41;]help]' pour voir les commandes                        ║
+║   Tapez '[[b;#00d9ff;]about]' pour en savoir plus                           ║
+║   Tapez '[[b;#ff8c00;]lang en]' pour passer à l'anglais                     ║
 ║                                                               ║
 ╚═══════════════════════════════════════════════════════════════╝
       `,
@@ -231,6 +231,14 @@ $(document).ready(function () {
           );
         },
       },
+      {
+        name: "splash",
+        description: "print the welcome screen",
+        type: "system",
+        handler: function () {
+          return messages[currentLanguage].welcome;
+        },
+      },
     ],
   };
 
@@ -240,12 +248,19 @@ $(document).ready(function () {
     settings
   );
 
-  // Add welcome message after initialization
-  setTimeout(function () {
-    if (term && term.echo) {
-      term.echo(welcomeMessage);
-    }
-  }, 100);
+  // Patch commandLineParse to handle arguments for 'lang' command
+  if (term && term.commandLineParse) {
+    var originalParse = term.commandLineParse;
+    term.commandLineParse = function (name, args) {
+      if (name === "lang") {
+        var langArg = args[0];
+        if (term.commands && term.commands.lang) {
+          return term.commands.lang.handler(langArg);
+        }
+      }
+      return originalParse.apply(term, [name, args]);
+    };
+  }
 
   // Add custom styling and animations
   $(document)
@@ -270,20 +285,20 @@ $(document).ready(function () {
   }
 
   // Monitor for new content and scroll
-  var observer = new MutationObserver(function () {
-    setTimeout(scrollToBottom, 100);
-  });
+  // var observer = new MutationObserver(function () {
+  //   setTimeout(scrollToBottom, 100);
+  // });
 
   // Observe terminal output for changes
-  setTimeout(function () {
-    var terminalOutput = document.querySelector(".terminal-output");
-    if (terminalOutput) {
-      observer.observe(terminalOutput, {
-        childList: true,
-        subtree: true,
-      });
-    }
-  }, 500);
+  // setTimeout(function () {
+  //   var terminalOutput = document.querySelector(".terminal-output");
+  //   if (terminalOutput) {
+  //     observer.observe(terminalOutput, {
+  //       childList: true,
+  //       subtree: true,
+  //     });
+  //   }
+  // }, 500);
 
   // Add typing sound effect (optional - visual feedback)
   var typingIndicator = false;
@@ -293,6 +308,31 @@ $(document).ready(function () {
       setTimeout(function () {
         typingIndicator = false;
       }, 100);
+    }
+  });
+
+  // Fix for mobile keyboard scrolling
+  $(window).on("resize", function () {
+    if (
+      document.activeElement &&
+      document.activeElement.tagName === "TEXTAREA"
+    ) {
+      setTimeout(scrollToBottom, 100);
+    }
+  });
+
+  // Fix for mobile "Enter" key behavior
+  // Some mobile keyboards trigger a keydown with keyCode 13 (Enter) which might be interpreted prematurely
+  // We ensure that the terminal handles it correctly
+  $(document).on("keydown", function (e) {
+    // If it's an Enter key on mobile (often keyCode 13 or 229)
+    if (e.which === 13 || e.keyCode === 13) {
+      // Ensure we are focused on the terminal
+      if (term && term.term) {
+        // Let jquery.terminal handle it, but we can add custom logic if needed
+        // For now, we just ensure the view is scrolled
+        setTimeout(scrollToBottom, 10);
+      }
     }
   });
 });
