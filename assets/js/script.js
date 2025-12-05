@@ -70,21 +70,36 @@ $(document).ready(function () {
       });
     } else if (isMobile) {
       // Medium mobile view with simple border
-      var border = "━".repeat(50);
+      var borderWidth = 65;
+      var border = "━".repeat(borderWidth);
+      var titleText = data.emoji + " " + data.greeting + " " + data.emoji;
+      var titleVisualLength = titleText.length + 2; // Account for emoji width
+      var titlePadding = Math.floor((borderWidth - titleVisualLength) / 2);
+      var titleRightPadding = borderWidth - titleVisualLength - titlePadding;
+      
       output += "┏" + border + "┓\n";
       output +=
-        "┃ " +
-        data.emoji +
-        " [[b;#00ff41;]" +
-        data.greeting +
-        "] " +
-        data.emoji +
-        "\n";
+        "┃" +
+        " ".repeat(titlePadding) +
+        "[[b;#00ff41;]" +
+        titleText +
+        "]" +
+        " ".repeat(titleRightPadding) +
+        "┃\n";
       output += "┣" + border + "┫\n";
+      
       data.commands.forEach(function (item) {
+        var cmdText = item.cmd + " → " + item.desc;
+        var cmdPadding = 2;
+        var cmdRightPadding = borderWidth - cmdText.length - cmdPadding;
         output +=
-          "┃ [[b;" + item.color + ";]" + item.cmd + "] → " + item.desc + "\n";
+          "┃" +
+          " ".repeat(cmdPadding) +
+          "[[b;" + item.color + ";]" + item.cmd + "] → " + item.desc +
+          " ".repeat(cmdRightPadding) +
+          "┃\n";
       });
+      
       output += "┗" + border + "┛\n";
     } else {
       // Full desktop view with centered content
