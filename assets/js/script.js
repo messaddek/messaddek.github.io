@@ -35,7 +35,7 @@ $(document).ready(function () {
   // Intelligent welcome message generator
   function generateWelcomeMessage(lang) {
     var isMobile = window.innerWidth <= 768;
-    var isSmallMobile = window.innerWidth <= 480;
+    var isSmallMobile = window.innerWidth <= 360;
 
     var content = {
       en: {
@@ -79,13 +79,13 @@ $(document).ready(function () {
 
       output += "┏" + border + "┓\n";
       output +=
-        "┃" +
+        "┃ " +
         " ".repeat(titlePadding) +
         "[[b;#00ff41;]" +
         titleText +
         "]" +
         " ".repeat(titleRightPadding) +
-        "┃\n";
+        " ┃\n";
       output += "┣" + border + "┫\n";
 
       data.commands.forEach(function (item) {
@@ -492,41 +492,7 @@ $(document).ready(function () {
   var isTyping = false;
   var scrollTimeout = null;
 
-  // Improved auto-scroll function
-  function smartScrollToBottom() {
-    var scroller = $(".terminal-scroller");
-    if (scroller.length) {
-      // Force scroll to bottom with a slight delay for rendering
-      setTimeout(function () {
-        scroller.scrollTop(scroller[0].scrollHeight);
-      }, 50);
-    }
-  }
-
-  // Monitor for terminal output changes
-  var observer = new MutationObserver(function (mutations) {
-    // Only scroll if user is near bottom (within 100px)
-    var scroller = $(".terminal-scroller")[0];
-    if (scroller) {
-      var isNearBottom =
-        scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight <
-        100;
-      if (isNearBottom) {
-        smartScrollToBottom();
-      }
-    }
-  });
-
-  // Start observing when terminal is ready
-  setTimeout(function () {
-    var terminalOutput = document.querySelector(".terminal-output");
-    if (terminalOutput) {
-      observer.observe(terminalOutput, {
-        childList: true,
-        subtree: true,
-      });
-    }
-  }, 1000);
+  // Auto-scroll disabled - user controls scrolling manually
 
   // Fix mobile keyboard issues
   if (isMobileDevice) {
@@ -540,29 +506,6 @@ $(document).ready(function () {
       }
     });
 
-    // Handle viewport changes when keyboard opens/closes
-    var lastHeight = window.innerHeight;
-    $(window).on("resize", function () {
-      var currentHeight = window.innerHeight;
-
-      // Keyboard likely opened (viewport shrunk)
-      if (currentHeight < lastHeight) {
-        setTimeout(smartScrollToBottom, 300);
-      }
-
-      lastHeight = currentHeight;
-    });
-
-    // Handle focus events only (removed aggressive input scrolling)
-    $(document).on("focus", ".cmd textarea, .cmd input", function () {
-      setTimeout(smartScrollToBottom, 400);
-    });
+    // Mobile scrolling disabled - user controls scroll manually
   }
-
-  // Scroll after command execution
-  $(document).on("keydown", function (e) {
-    if ((e.keyCode === 13 || e.which === 13) && !isTyping) {
-      setTimeout(smartScrollToBottom, 200);
-    }
-  });
 });

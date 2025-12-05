@@ -211,6 +211,25 @@ body::after {
   z-index: 100 !important;
 }
 
+/* Prevent terminal from scrolling off-screen on mobile keyboard */
+@media (max-width: 768px) {
+  body {
+    position: fixed;
+    width: 100%;
+  }
+
+  .terminal {
+    position: relative;
+    height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height on mobile */
+  }
+
+  .terminal-scroller {
+    max-height: calc(100vh - 120px);
+    max-height: calc(100dvh - 120px);
+  }
+}
+
 /* Ensure consistent background throughout - Override jQuery Terminal library defaults */
 .terminal-output,
 .terminal-scroller,
