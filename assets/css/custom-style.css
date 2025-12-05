@@ -228,6 +228,23 @@ body::after {
     max-height: calc(100vh - 120px);
     max-height: calc(100dvh - 120px);
   }
+
+  /* Ensure mobile input is accessible */
+  .cmd,
+  .cmd textarea,
+  .cmd input,
+  .cmd-editable {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    -webkit-user-select: text !important;
+    user-select: text !important;
+    touch-action: manipulation !important;
+  }
+
+  .cmd textarea,
+  .cmd input {
+    font-size: 16px !important; /* Prevent zoom on iOS */
+  }
 }
 
 /* Ensure consistent background throughout - Override jQuery Terminal library defaults */

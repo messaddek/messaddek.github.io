@@ -61,51 +61,14 @@ $(document).ready(function () {
     var data = content[lang];
     var output = "\n";
 
-    if (isSmallMobile) {
-      // Compact mobile view
+    if (isMobile) {
+      // Clean mobile view without borders
       output += "[[b;#00ff41;]" + data.emoji + " " + data.greeting + "]\n\n";
       data.commands.forEach(function (item) {
         output +=
-          "[[b;" + item.color + ";]" + item.cmd + "] - " + item.desc + "\n";
+          "[[b;" + item.color + ";]" + item.cmd + "] → " + item.desc + "\n";
       });
-    } else if (isMobile) {
-      // Medium mobile view with simple border
-      var borderWidth = 65;
-      var border = "━".repeat(borderWidth);
-      var titleText = data.emoji + " " + data.greeting + " " + data.emoji;
-      var titleVisualLength = titleText.length + 2; // Account for emoji width
-      var titlePadding = Math.floor((borderWidth - titleVisualLength) / 2);
-      var titleRightPadding = borderWidth - titleVisualLength - titlePadding;
-
-      output += "┏" + border + "┓\n";
-      output +=
-        "┃ " +
-        " ".repeat(titlePadding) +
-        "[[b;#00ff41;]" +
-        titleText +
-        "]" +
-        " ".repeat(titleRightPadding) +
-        " ┃\n";
-      output += "┣" + border + "┫\n";
-
-      data.commands.forEach(function (item) {
-        var cmdText = item.cmd + " → " + item.desc;
-        var cmdPadding = 2;
-        var cmdRightPadding = borderWidth - cmdText.length - cmdPadding;
-        output +=
-          "┃" +
-          " ".repeat(cmdPadding) +
-          "[[b;" +
-          item.color +
-          ";]" +
-          item.cmd +
-          "] → " +
-          item.desc +
-          " ".repeat(cmdRightPadding) +
-          "┃\n";
-      });
-
-      output += "┗" + border + "┛\n";
+      output += "\n";
     } else {
       // Full desktop view with centered content
       var width = 67;
@@ -114,7 +77,7 @@ $(document).ready(function () {
       // Calculate actual visual length (emojis count as 2 chars visually but 1 in JS)
       var plainTitle = data.emoji + " " + data.greeting + " " + data.emoji;
       // Two emojis = 2 extra visual chars (each emoji is ~1.5-2 chars wide)
-      var visualLength = plainTitle.length - 4;
+      var visualLength = plainTitle.length - 2;
       var titlePadding = Math.floor((width - visualLength) / 2);
       var rightPadding = width - visualLength - titlePadding;
 
@@ -532,6 +495,34 @@ $(document).ready(function () {
 
   // Fix mobile keyboard issues
   if (isMobileDevice) {
+    // Ensure terminal input is focusable and accessible on mobile
+    setTimeout(function () {
+      var cmdInput = $(".cmd textarea, .cmd input").first();
+      if (cmdInput.length) {
+        // Make input focusable
+        cmdInput.attr("inputmode", "text");
+        cmdInput.css({
+          opacity: "1",
+          "pointer-events": "auto",
+          "-webkit-user-select": "text",
+          "user-select": "text",
+        });
+      }
+
+      // Focus terminal on tap anywhere
+      $(".terminal, .terminal-scroller, .terminal-output").on(
+        "touchstart click",
+        function (e) {
+          var input = $(".cmd textarea, .cmd input").first();
+          if (input.length) {
+            setTimeout(function () {
+              input.focus();
+            }, 100);
+          }
+        }
+      );
+    }, 1000);
+
     // Prevent auto-submit on mobile keyboards
     $(document).on("keydown", ".cmd textarea, .cmd input", function (e) {
       if (e.keyCode === 13 || e.which === 13) {
