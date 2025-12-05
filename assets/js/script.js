@@ -90,8 +90,12 @@ $(document).ready(function () {
       // Full desktop view with centered content
       var width = 67;
       var border = "═".repeat(width);
-      var title = data.emoji + " " + data.greeting + " " + data.emoji;
-      var titlePadding = Math.floor((width - title.length) / 2);
+
+      // Calculate actual visual length (emojis count as 2 chars visually but 1 in JS)
+      var plainTitle = data.emoji + " " + data.greeting + " " + data.emoji;
+      var visualLength = plainTitle.length + 2; // +2 for emoji visual width compensation
+      var titlePadding = Math.floor((width - visualLength) / 2);
+      var rightPadding = width - visualLength - titlePadding;
 
       output += "╔" + border + "╗\n";
       output += "║" + " ".repeat(width) + "║\n";
@@ -99,27 +103,24 @@ $(document).ready(function () {
         "║" +
         " ".repeat(titlePadding) +
         "[[b;#00ff41;]" +
-        title +
+        plainTitle +
         "]" +
-        " ".repeat(width - titlePadding - title.length) +
+        " ".repeat(rightPadding) +
         "║\n";
       output += "║" + " ".repeat(width) + "║\n";
 
       data.commands.forEach(function (item) {
-        var line =
+        var plainLine = "Type '" + item.cmd + "' to " + item.desc;
+        var styledLine =
           "Type '[[b;" + item.color + ";]" + item.cmd + "]' to " + item.desc;
-        var linePadding = Math.floor(
-          (width - ("Type '" + item.cmd + "' to " + item.desc).length) / 2
-        );
+        var linePadding = Math.floor((width - plainLine.length) / 2);
+        var lineRightPadding = width - plainLine.length - linePadding;
+
         output +=
           "║" +
           " ".repeat(linePadding) +
-          line +
-          " ".repeat(
-            width -
-              linePadding -
-              ("Type '" + item.cmd + "' to " + item.desc).length
-          ) +
+          styledLine +
+          " ".repeat(lineRightPadding) +
           "║\n";
       });
 
