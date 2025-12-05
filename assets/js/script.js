@@ -113,7 +113,7 @@ $(document).ready(function () {
 
       // Calculate actual visual length (emojis count as 2 chars visually but 1 in JS)
       var plainTitle = data.emoji + " " + data.greeting + " " + data.emoji;
-      var visualLength = plainTitle.length + 2; // +2 for emoji visual width compensation
+      var visualLength = plainTitle.length - 2; // -2 to compensate for emoji rendering
       var titlePadding = Math.floor((width - visualLength) / 2);
       var rightPadding = width - visualLength - titlePadding;
 
