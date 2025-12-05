@@ -76,7 +76,7 @@ $(document).ready(function () {
       var titleVisualLength = titleText.length + 2; // Account for emoji width
       var titlePadding = Math.floor((borderWidth - titleVisualLength) / 2);
       var titleRightPadding = borderWidth - titleVisualLength - titlePadding;
-      
+
       output += "┏" + border + "┓\n";
       output +=
         "┃" +
@@ -87,7 +87,7 @@ $(document).ready(function () {
         " ".repeat(titleRightPadding) +
         "┃\n";
       output += "┣" + border + "┫\n";
-      
+
       data.commands.forEach(function (item) {
         var cmdText = item.cmd + " → " + item.desc;
         var cmdPadding = 2;
@@ -95,11 +95,16 @@ $(document).ready(function () {
         output +=
           "┃" +
           " ".repeat(cmdPadding) +
-          "[[b;" + item.color + ";]" + item.cmd + "] → " + item.desc +
+          "[[b;" +
+          item.color +
+          ";]" +
+          item.cmd +
+          "] → " +
+          item.desc +
           " ".repeat(cmdRightPadding) +
           "┃\n";
       });
-      
+
       output += "┗" + border + "┛\n";
     } else {
       // Full desktop view with centered content
