@@ -211,7 +211,7 @@ body::after {
   z-index: 100 !important;
 }
 
-/* Ensure consistent background throughout */
+/* Ensure consistent background throughout - Override jQuery Terminal library defaults */
 .terminal-output,
 .terminal-scroller,
 .cmd,
@@ -221,13 +221,40 @@ body::after {
 .terminal-output > div,
 .terminal-output > div > div,
 .terminal .terminal-output,
-.terminal .cmd {
+.terminal .cmd,
+.cmd div,
+.cmd span[data-text]:not(.cmd-inverted):not(.token):not(.emoji),
+.terminal-output > :not(.raw) div,
+.terminal-output
+  > :not(.raw)
+  span[data-text]:not(.token):not(.inverted):not(.terminal-inverted):not(
+    .cmd-inverted
+  ):not(.terminal-error):not(.emoji) {
   background: transparent !important;
   background-color: transparent !important;
 }
 
-/* Override any jQuery Terminal default backgrounds */
-.terminal .terminal-output div {
+/* Override jQuery Terminal CSS variable backgrounds */
+.terminal,
+.cmd,
+.cmd div,
+.cmd span,
+.terminal-output > :not(.raw) a,
+.terminal-output > :not(.raw) div,
+.terminal-output > :not(.raw) span {
+  --background: transparent !important;
+}
+
+/* Force override for welcome message container */
+.terminal .terminal-output > div:first-child,
+.terminal .terminal-output > div:first-child > div {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Override any remaining jQuery Terminal default backgrounds */
+.terminal .terminal-output div,
+.terminal .terminal-output div div {
   background: transparent !important;
 }
 

@@ -553,22 +553,7 @@ $(document).ready(function () {
       lastHeight = currentHeight;
     });
 
-    // Ensure cursor stays visible while typing
-    $(document).on("input", ".cmd textarea, .cmd input", function () {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(function () {
-        var activeElement = document.activeElement;
-        if (
-          activeElement &&
-          (activeElement.tagName === "TEXTAREA" ||
-            activeElement.tagName === "INPUT")
-        ) {
-          activeElement.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      }, 100);
-    });
-
-    // Handle focus events
+    // Handle focus events only (removed aggressive input scrolling)
     $(document).on("focus", ".cmd textarea, .cmd input", function () {
       setTimeout(smartScrollToBottom, 400);
     });
