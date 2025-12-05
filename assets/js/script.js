@@ -484,24 +484,100 @@ $(document).ready(function () {
     }
   });
 
-  // Fix for mobile keyboard scrolling
-  $(window).on("resize", function () {
-    if (
-      document.activeElement &&
-      document.activeElement.tagName === "TEXTAREA"
-    ) {
-      setTimeout(scrollToBottom, 100);
+  // Mobile keyboard and scroll management
+  var isMobileDevice =
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      navigator.userAgent
+    );
+  var isTyping = false;
+  var scrollTimeout = null;
+
+  // Improved auto-scroll function
+  function smartScrollToBottom() {
+    var scroller = $(".terminal-scroller");
+    if (scroller.length) {
+      // Force scroll to bottom with a slight delay for rendering
+      setTimeout(function () {
+        scroller.scrollTop(scroller[0].scrollHeight);
+      }, 50);
+    }
+  }
+
+  // Monitor for terminal output changes
+  var observer = new MutationObserver(function (mutations) {
+    // Only scroll if user is near bottom (within 100px)
+    var scroller = $(".terminal-scroller")[0];
+    if (scroller) {
+      var isNearBottom =
+        scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight <
+        100;
+      if (isNearBottom) {
+        smartScrollToBottom();
+      }
     }
   });
 
-  // Fix for mobile "Enter" key behavior and general typing scroll
-  // Some mobile keyboards trigger a keydown with keyCode 13 (Enter) which might be interpreted prematurely
-  // We ensure that the terminal handles it correctly and scrolls on typing
+  // Start observing when terminal is ready
+  setTimeout(function () {
+    var terminalOutput = document.querySelector(".terminal-output");
+    if (terminalOutput) {
+      observer.observe(terminalOutput, {
+        childList: true,
+        subtree: true,
+      });
+    }
+  }, 1000);
+
+  // Fix mobile keyboard issues
+  if (isMobileDevice) {
+    // Prevent auto-submit on mobile keyboards
+    $(document).on("keydown", ".cmd textarea, .cmd input", function (e) {
+      if (e.keyCode === 13 || e.which === 13) {
+        // Track that user actually pressed enter
+        isTyping = false;
+      } else {
+        isTyping = true;
+      }
+    });
+
+    // Handle viewport changes when keyboard opens/closes
+    var lastHeight = window.innerHeight;
+    $(window).on("resize", function () {
+      var currentHeight = window.innerHeight;
+
+      // Keyboard likely opened (viewport shrunk)
+      if (currentHeight < lastHeight) {
+        setTimeout(smartScrollToBottom, 300);
+      }
+
+      lastHeight = currentHeight;
+    });
+
+    // Ensure cursor stays visible while typing
+    $(document).on("input", ".cmd textarea, .cmd input", function () {
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () {
+        var activeElement = document.activeElement;
+        if (
+          activeElement &&
+          (activeElement.tagName === "TEXTAREA" ||
+            activeElement.tagName === "INPUT")
+        ) {
+          activeElement.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }, 100);
+    });
+
+    // Handle focus events
+    $(document).on("focus", ".cmd textarea, .cmd input", function () {
+      setTimeout(smartScrollToBottom, 400);
+    });
+  }
+
+  // Scroll after command execution
   $(document).on("keydown", function (e) {
-    // Ensure we are focused on the terminal
-    if (term && (term.term || term.echo)) {
-      // Scroll on any key press to keep cursor in view
-      // setTimeout(scrollToBottom, 10);
+    if ((e.keyCode === 13 || e.which === 13) && !isTyping) {
+      setTimeout(smartScrollToBottom, 200);
     }
   });
 });

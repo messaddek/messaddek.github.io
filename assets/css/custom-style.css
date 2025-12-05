@@ -215,8 +215,26 @@ body::after {
 .terminal-output,
 .terminal-scroller,
 .cmd,
-.cmd-editable {
+.cmd-editable,
+.cmd textarea,
+.cmd input,
+.terminal-output > div,
+.terminal-output > div > div,
+.terminal .terminal-output,
+.terminal .cmd {
   background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Override any jQuery Terminal default backgrounds */
+.terminal .terminal-output div {
+  background: transparent !important;
+}
+
+.cmd .cmd-editable,
+.cmd textarea.cmd-clipboard {
+  background: transparent !important;
+  background-color: transparent !important;
 }
 
 .cmd .cmd-prompt,
