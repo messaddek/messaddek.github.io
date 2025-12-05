@@ -77,7 +77,7 @@ $(document).ready(function () {
       // Calculate actual visual length (emojis count as 2 chars visually but 1 in JS)
       var plainTitle = data.emoji + " " + data.greeting + " " + data.emoji;
       // Two emojis = ~1 extra visual char compensation
-      var visualLength = plainTitle.length + 1;
+      var visualLength = plainTitle.length + 1.2;
       var titlePadding = Math.floor((width - visualLength) / 2);
       var rightPadding = width - visualLength - titlePadding;
 
@@ -379,6 +379,14 @@ $(document).ready(function () {
     settings
   );
 
+  // Disable auto-scroll on page load
+  setTimeout(function() {
+    var scroller = $(".terminal-scroller");
+    if (scroller.length) {
+      scroller.scrollTop(0); // Reset to top
+    }
+  }, 100);
+
   // Patch commandLineParse to handle arguments for 'lang' command
   // The CMDResume plugin attaches the internal object to the jQuery object as .CMDResume
   var internalTerm = term.CMDResume || term;
@@ -396,9 +404,6 @@ $(document).ready(function () {
     };
   }
 
-  // Ensure scroll to bottom on init
-  // setTimeout(scrollToBottom, 500);
-
   // Add custom styling and animations
   $(document)
     .on("mouseenter", ".terminal a[href]", function () {
@@ -407,35 +412,6 @@ $(document).ready(function () {
     .on("mouseleave", ".terminal a[href]", function () {
       $(this).css("text-shadow", "0 0 5px rgba(0, 217, 255, 0.5)");
     });
-
-  // Smooth scroll for terminal
-  $(".terminal-scroller").css({
-    "scroll-behavior": "smooth",
-  });
-
-  // Auto-scroll to bottom after output
-  function scrollToBottom() {
-    var scroller = $(".terminal-scroller");
-    if (scroller.length) {
-      scroller.scrollTop(scroller[0].scrollHeight);
-    }
-  }
-
-  // Monitor for new content and scroll
-  // var observer = new MutationObserver(function () {
-  //   setTimeout(scrollToBottom, 100);
-  // });
-
-  // Observe terminal output for changes
-  // setTimeout(function () {
-  //   var terminalOutput = document.querySelector(".terminal-output");
-  //   if (terminalOutput) {
-  //     observer.observe(terminalOutput, {
-  //       childList: true,
-  //       subtree: true,
-  //     });
-  //   }
-  // }, 500);
 
   // Add typing sound effect (optional - visual feedback)
   var typingIndicator = false;
