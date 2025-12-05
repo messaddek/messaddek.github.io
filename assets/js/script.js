@@ -235,18 +235,36 @@ $(document).ready(function () {
         name: "employment",
         title: "Employment",
         description: "employment history",
-        type: "system",
-        handler: function () {
-          return formatEmployment(term.data.work);
+        data: "work",
+        type: "array",
+        handlers: {
+          organisation: function (job) {
+            return job.company;
+          },
+          title: function (job) {
+            return job.position;
+          },
+          date: function (job) {
+            return job.startDate + " - " + (job.endDate || "Present");
+          },
         },
       },
       {
         name: "work",
         title: "Work",
         description: "alias for employment",
-        type: "system",
-        handler: function () {
-          return formatEmployment(term.data.work);
+        data: "work",
+        type: "array",
+        handlers: {
+          organisation: function (job) {
+            return job.company;
+          },
+          title: function (job) {
+            return job.position;
+          },
+          date: function (job) {
+            return job.startDate + " - " + (job.endDate || "Present");
+          },
         },
       },
       {
