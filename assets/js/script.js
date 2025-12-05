@@ -113,7 +113,8 @@ $(document).ready(function () {
 
       // Calculate actual visual length (emojis count as 2 chars visually but 1 in JS)
       var plainTitle = data.emoji + " " + data.greeting + " " + data.emoji;
-      var visualLength = plainTitle.length - 2; // -2 to compensate for emoji rendering
+      // Two emojis = 2 extra visual chars (each emoji is ~1.5-2 chars wide)
+      var visualLength = plainTitle.length - 4;
       var titlePadding = Math.floor((width - visualLength) / 2);
       var rightPadding = width - visualLength - titlePadding;
 
@@ -492,7 +493,42 @@ $(document).ready(function () {
   var isTyping = false;
   var scrollTimeout = null;
 
-  // Auto-scroll disabled - user controls scrolling manually
+  // Smart scroll function for desktop only
+  function smartScrollToBottom() {
+    if (!isMobileDevice) {
+      var scroller = $(".terminal-scroller");
+      if (scroller.length) {
+        setTimeout(function () {
+          scroller.scrollTop(scroller[0].scrollHeight);
+        }, 100);
+      }
+    }
+  }
+
+  // Monitor for terminal output changes on desktop
+  if (!isMobileDevice) {
+    var observer = new MutationObserver(function (mutations) {
+      var scroller = $(".terminal-scroller")[0];
+      if (scroller) {
+        var isNearBottom =
+          scroller.scrollHeight - scroller.scrollTop - scroller.clientHeight <
+          150;
+        if (isNearBottom) {
+          smartScrollToBottom();
+        }
+      }
+    });
+
+    setTimeout(function () {
+      var terminalOutput = document.querySelector(".terminal-output");
+      if (terminalOutput) {
+        observer.observe(terminalOutput, {
+          childList: true,
+          subtree: true,
+        });
+      }
+    }, 1000);
+  }
 
   // Fix mobile keyboard issues
   if (isMobileDevice) {
@@ -507,5 +543,14 @@ $(document).ready(function () {
     });
 
     // Mobile scrolling disabled - user controls scroll manually
+  }
+
+  // Desktop: Scroll after command execution
+  if (!isMobileDevice) {
+    $(document).on("keydown", function (e) {
+      if (e.keyCode === 13 || e.which === 13) {
+        setTimeout(smartScrollToBottom, 200);
+      }
+    });
   }
 });
