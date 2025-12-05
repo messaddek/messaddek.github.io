@@ -32,35 +32,113 @@ $(document).ready(function () {
     return "assets/json/resume-" + lang + ".json";
   }
 
+  // Intelligent welcome message generator
+  function generateWelcomeMessage(lang) {
+    var isMobile = window.innerWidth <= 768;
+    var isSmallMobile = window.innerWidth <= 480;
+
+    var content = {
+      en: {
+        greeting: "Welcome to Mohammed Essaddek's Interactive Resume",
+        emoji: "🚀",
+        commands: [
+          { cmd: "help", desc: "see available commands", color: "#00ff41" },
+          { cmd: "about", desc: "learn more about me", color: "#00d9ff" },
+          { cmd: "lang fr", desc: "switch to French", color: "#ff8c00" },
+        ],
+      },
+      fr: {
+        greeting: "Bienvenue sur le CV Interactif de Mohammed Essaddek",
+        emoji: "🚀",
+        commands: [
+          { cmd: "help", desc: "voir les commandes", color: "#00ff41" },
+          { cmd: "about", desc: "en savoir plus", color: "#00d9ff" },
+          { cmd: "lang en", desc: "passer à l'anglais", color: "#ff8c00" },
+        ],
+      },
+    };
+
+    var data = content[lang];
+    var output = "\n";
+
+    if (isSmallMobile) {
+      // Compact mobile view
+      output += "[[b;#00ff41;]" + data.emoji + " " + data.greeting + "]\n\n";
+      data.commands.forEach(function (item) {
+        output +=
+          "[[b;" + item.color + ";]" + item.cmd + "] - " + item.desc + "\n";
+      });
+    } else if (isMobile) {
+      // Medium mobile view with simple border
+      var border = "━".repeat(50);
+      output += "┏" + border + "┓\n";
+      output +=
+        "┃ " +
+        data.emoji +
+        " [[b;#00ff41;]" +
+        data.greeting +
+        "] " +
+        data.emoji +
+        "\n";
+      output += "┣" + border + "┫\n";
+      data.commands.forEach(function (item) {
+        output +=
+          "┃ [[b;" + item.color + ";]" + item.cmd + "] → " + item.desc + "\n";
+      });
+      output += "┗" + border + "┛\n";
+    } else {
+      // Full desktop view with centered content
+      var width = 67;
+      var border = "═".repeat(width);
+      var title = data.emoji + " " + data.greeting + " " + data.emoji;
+      var titlePadding = Math.floor((width - title.length) / 2);
+
+      output += "╔" + border + "╗\n";
+      output += "║" + " ".repeat(width) + "║\n";
+      output +=
+        "║" +
+        " ".repeat(titlePadding) +
+        "[[b;#00ff41;]" +
+        title +
+        "]" +
+        " ".repeat(width - titlePadding - title.length) +
+        "║\n";
+      output += "║" + " ".repeat(width) + "║\n";
+
+      data.commands.forEach(function (item) {
+        var line =
+          "Type '[[b;" + item.color + ";]" + item.cmd + "]' to " + item.desc;
+        var linePadding = Math.floor(
+          (width - ("Type '" + item.cmd + "' to " + item.desc).length) / 2
+        );
+        output +=
+          "║" +
+          " ".repeat(linePadding) +
+          line +
+          " ".repeat(
+            width -
+              linePadding -
+              ("Type '" + item.cmd + "' to " + item.desc).length
+          ) +
+          "║\n";
+      });
+
+      output += "║" + " ".repeat(width) + "║\n";
+      output += "╚" + border + "╝\n";
+    }
+
+    return output;
+  }
+
   var messages = {
     en: {
-      welcome: `
-╔═══════════════════════════════════════════════════════════════╗
-║                                                               ║
-║   🚀 Welcome to Mohammed Essaddek's Interactive Resume 🚀       ║
-║                                                               ║
-║   Type '[[b;#00ff41;]help]' to see available commands                       ║
-║   Type '[[b;#00d9ff;]about]' to learn more about me                          ║
-║   Type '[[b;#ff8c00;]lang fr]' to switch to French                          ║
-║                                                               ║
-╚═══════════════════════════════════════════════════════════════╝
-      `,
+      welcome: generateWelcomeMessage("en"),
       langChanged: "Language changed to English. Reloading resume...",
       langCurrent: "Current language: English",
       langInvalid: "Invalid language. Available languages: en, fr",
     },
     fr: {
-      welcome: `
-╔═══════════════════════════════════════════════════════════════╗
-║                                                               ║
-║   🚀 Bienvenue sur le CV Interactif de Mohammed Essaddek 🚀     ║
-║                                                               ║
-║   Tapez '[[b;#00ff41;]help]' pour voir les commandes                        ║
-║   Tapez '[[b;#00d9ff;]about]' pour en savoir plus                           ║
-║   Tapez '[[b;#ff8c00;]lang en]' pour passer à l'anglais                     ║
-║                                                               ║
-╚═══════════════════════════════════════════════════════════════╝
-      `,
+      welcome: generateWelcomeMessage("fr"),
       langChanged: "Langue changée en Français. Rechargement du CV...",
       langCurrent: "Langue actuelle : Français",
       langInvalid: "Langue invalide. Langues disponibles : en, fr",
@@ -68,6 +146,36 @@ $(document).ready(function () {
   };
 
   var welcomeMessage = messages[currentLanguage].welcome;
+
+  function formatEmployment(workData) {
+    if (!workData || !workData.length) return "No employment history found.";
+
+    var output = "";
+    workData.forEach(function (job) {
+      output += "\n";
+      // Company
+      output += "[[b;#00ff41;]" + job.company + "]\n";
+      // Position & Date
+      var date = job.startDate + " - " + (job.endDate || "Present");
+      output += "[[b;#00d9ff;]" + job.position + "]  |  " + date + "\n";
+      // Location
+      if (job.location) {
+        output += "📍 " + job.location + "\n";
+      }
+      // Summary
+      if (job.summary) {
+        output += job.summary + "\n";
+      }
+      // Highlights
+      if (job.highlights && job.highlights.length) {
+        job.highlights.forEach(function (highlight) {
+          output += "• " + highlight + "\n";
+        });
+      }
+      output += "\n--------------------------------------------------\n";
+    });
+    return output;
+  }
 
   var settings = {
     showForks: false,
@@ -120,6 +228,24 @@ $(document).ready(function () {
           } else {
             return messages[currentLanguage].langInvalid;
           }
+        },
+      },
+      {
+        name: "employment",
+        title: "Employment",
+        description: "employment history",
+        type: "system",
+        handler: function () {
+          return formatEmployment(term.data.work);
+        },
+      },
+      {
+        name: "work",
+        title: "Work",
+        description: "alias for employment",
+        type: "system",
+        handler: function () {
+          return formatEmployment(term.data.work);
         },
       },
       {
