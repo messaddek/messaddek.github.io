@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  // Deferred terminal reference — needed for raw HTML echo (photo command)
+  var terminalRef = { instance: null };
+
   // Language detection and management
   // Priority: URL parameter > localStorage > browser language
   function getLanguageFromURL() {
@@ -63,23 +66,19 @@ $(document).ready(function () {
 
     if (isMobile) {
       // Clean mobile view without borders
-      output += "[[b;#00ff41;]" + data.emoji + " " + data.greeting + "]\n\n";
+      output += "[[b;#00ff41;]" + data.greeting + "]\n\n";
       data.commands.forEach(function (item) {
         output +=
-          "[[b;" + item.color + ";]" + item.cmd + "] → " + item.desc + "\n";
+          "[[b;" + item.color + ";]" + item.cmd + "] - " + item.desc + "\n";
       });
       output += "\n";
     } else {
-      // Full desktop view with centered content
+      // Full desktop view — no emojis in the box to avoid width calculation issues
       var width = 67;
       var border = "═".repeat(width);
-
-      // Calculate actual visual length (emojis count as 2 chars visually but 1 in JS)
-      var plainTitle = data.emoji + " " + data.greeting + " " + data.emoji;
-      // Two emojis = ~1 extra visual char compensation
-      var visualLength = plainTitle.length + 1.2;
-      var titlePadding = Math.floor((width - visualLength) / 2);
-      var rightPadding = width - visualLength - titlePadding;
+      var plainTitle = data.greeting;
+      var titlePadding = Math.floor((width - plainTitle.length) / 2);
+      var rightPadding = width - plainTitle.length - titlePadding;
 
       output += "╔" + border + "╗\n";
       output += "║" + " ".repeat(width) + "║\n";
@@ -355,11 +354,15 @@ $(document).ready(function () {
         handler: function () {
           var isMobile = window.innerWidth <= 768;
           var size = isMobile ? "150px" : "200px";
-          return (
-            '<div style="text-align: center; margin: 20px 0;"><img src="images/photo.jpg" alt="Mohammed Essaddek" style="max-width: ' +
+          var html =
+            '<div style="text-align:center;margin:20px 0;"><img src="images/photo.jpg" alt="Mohammed Essaddek" loading="lazy" style="max-width:' +
             size +
-            '; height: auto; border-radius: 50%; border: 3px solid #00ff41; box-shadow: 0 0 20px rgba(0, 255, 65, 0.5);"/></div>'
-          );
+            ';height:auto;border-radius:50%;border:3px solid #00ff41;box-shadow:0 0 20px rgba(0,255,65,0.5);"/></div>';
+          if (terminalRef.instance) {
+            terminalRef.instance.echo(html, { raw: true });
+            return; // prevent CMDResume from double-echoing the return value
+          }
+          return html;
         },
       },
       {
@@ -379,11 +382,19 @@ $(document).ready(function () {
     settings
   );
 
-  // Disable auto-scroll on page load
+  // Store terminal reference for raw HTML echo (photo command)
+  terminalRef.instance = term;
+
+  // Disable auto-scroll — user controls scroll manually
+  if (term && typeof term.scrollToBottom === "function") {
+    term.scrollToBottom = function () {};
+  }
+
+  // Reset scroll to top on load
   setTimeout(function() {
     var scroller = $(".terminal-scroller");
     if (scroller.length) {
-      scroller.scrollTop(0); // Reset to top
+      scroller.scrollTop(0);
     }
   }, 100);
 
