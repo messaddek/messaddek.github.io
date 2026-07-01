@@ -2,12 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
   "basics": {
     "name": "Mohammed Essaddek",
-    "label": "Ingénieur logiciel senior | Expert Technique .NET",
+    "label": "Ingénieur Logiciel Senior | Architecte Solution | Expert .NET",
     "image": "images/photo.jpg",
-    "email": "mohammed@essaddek.com",
+    "email": "mohammed.essaddek@teal.ma",
     "phone": "+212 6 64 26 16 12",
     "url": "https://essaddek.com",
-    "summary": "👋 Bienvenue sur mon CV terminal interactif !\n\n🚀 Je suis un Ingénieur Logiciel Senior et Expert Technique .NET accompli avec plus de 10 ans d'expérience spécialisé dans les technologies .NET, l'architecture cloud et les pratiques DevOps. Actuellement en charge des initiatives techniques chez Teal Technology Services (Filiale OCP), j'excelle dans l'architecture de solutions évolutives et le mentorat d'équipes de développement.\n\n💡 Expertise Principale :\n• Langages & Frameworks : C#, .NET Core, ASP.NET MVC, Entity Framework, Angular, TypeScript, JavaScript, Next.js, Hono.js\n• Cloud & DevOps : Microsoft Azure (IoT Hub, Functions, App Services, DevOps), CI/CD, Docker, Infrastructure as Code\n• Bases de données : SQL Server, PostgreSQL, MongoDB, Oracle, MySQL\n• Architecture : Microservices, API REST, Conception événementielle, Architecture basée sur les fonctionnalités\n• Monitoring & Observabilité : Grafana, Prometheus, Loki\n• Leadership : Architecture Technique, Revue de Code, Mentorat d'Équipe, Agile/Scrum\n• Outils : Visual Studio, VS Code, Azure DevOps, Git, Docker\n\n🎯 Bilan éprouvé de livraison d'applications critiques incluant systèmes de suivi IoT, portails gouvernementaux, solutions à l'échelle de l'entreprise et plateformes SaaS. Passionné par le code propre, les meilleures pratiques et l'apprentissage continu.\n\n📍 Basé au Maroc | Ouvert aux opportunités à distance dans le monde entier | Maîtrise du français, de l'arabe et de l'anglais",
+    "summary": "Bienvenue sur mon CV terminal interactif !\n\nIngénieur Logiciel Senior et Architecte Solution avec 10+ ans d'expérience. Actuellement en charge de l'urbanisation de la Teal Threat Defense Platform (TTDP) — un portail unifié de cybersécurité OT/ICS (Single Pane of Glass, norme IEC 62443) chez Teal Technology Services.\n\nExpertise Principale :\n• Architecture : Clean Architecture, CQRS, Microservices, SaaS Multi-Tenant (Schema-per-tenant), Vertical Slice\n• Backend : C#, .NET 10, ASP.NET Core (Minimal APIs), Entity Framework Core 9, MediatR, SignalR\n• Frontend : TypeScript, Next.js 16, React 19, Tailwind CSS 4, shadcn/ui, Auth.js, Hono.js\n• Intelligence Artificielle : Intégration LLM (OpenAI API), systèmes RAG (FAISS), agents IA automatisés, Python (FastAPI)\n• Cloud & DevOps : Azure (App Services, Blob, Functions), Docker, Nginx, GitHub Actions, Grafana, Prometheus\n• Base de données : PostgreSQL, SQL Server, MongoDB\n• Sécurité & IAM : Zero Trust, RBAC granulaire, TLS 1.3, WebSockets\n• Leadership : Rédaction SFD, roadmaps techniques, encadrement d'équipes, Agile/Scrum\n\nBilan éprouvé sur des plateformes cybersécurité, systèmes IoT, portails gouvernementaux, SaaS d'entreprise et digitalisation RH. Passionné par le code propre, l'observabilité et l'amélioration continue.\n\nBasé à Casablanca, Maroc | Ouvert aux opportunités à distance | Maîtrise du français, de l'arabe et de l'anglais",
     "location": {
       "countryCode": "MA",
       "address": "Casablanca, Morocco",
@@ -24,22 +24,38 @@
   },
   "work": [
     {
-      "company": "Teal Technology Services (OCP Subsidiary)",
+      "company": "Teal Technology Services",
+      "position": "Architecte Solution & Expert Technique Lead",
+      "startDate": "2026-05-01",
+      "endDate": "",
+      "highlights": [
+        "Gouvernance & Architecture Système : Définition de la vision technique (Next.js 16, .NET 10, Docker) et conception d'une architecture modulaire Single-Tenant garantissant l'isolation stricte des données clients",
+        "Urbanisation & Écosystème Hybride : Intégration d'applications legacy et encapsulation sécurisée d'outils tiers (Trellix, Veeam) via Reverse Proxy Nginx et iframes dynamiques",
+        "Observabilité & Data Pipeline : Design d'un pipeline de télémétrie SIEM Lite ultra-léger (Fluent Bit, Prometheus) pour le traitement temps réel sans surcharge de l'infrastructure OT",
+        "Sécurité & IAM : Politique Zero Trust, RBAC granulaire couplé à un moteur de vérification de licences, hardening des flux (TLS 1.3, WebSockets)",
+        "Leadership Stratégique : Rédaction des SFD, définition de la roadmap technique (60 J/H), encadrement de l'équipe de développement"
+      ],
+      "summary": "Urbanisation et pilotage technique d'un portail unifié de cybersécurité OT/ICS (Single Pane of Glass) respectant les exigences de la norme IEC 62443. Projet : Teal Threat Defense Platform (TTDP). Environnement technique : Architecture Micro-Services/Hybride, .NET 10 (Clean Architecture, CQRS), Next.js 16, PostgreSQL, Docker, Fluent Bit, Prometheus, Grafana, Auth.js.",
+      "url": "https://www.linkedin.com/company/teal-technology-services/",
+      "location": "Casablanca, Maroc"
+    },
+    {
+      "company": "Teal Technology Services",
       "position": "Lead Architecte & Développeur Full Stack",
       "startDate": "2025-03-01",
-      "endDate": "",
+      "endDate": "2026-04-30",
       "highlights": [
         "🏗️ Architecture Moderne: Conception d'une architecture Feature-Based haute performance",
         "🚀 DevOps & Observabilité: Mise en place d'une infrastructure conteneurisée robuste et d'une stack de monitoring complète pour assurer la haute disponibilité",
         "🔒 Sécurité & Logique Métier: Implémentation de workflows d'approbation complexes, moteur de calcul de jours ouvrés, et gestion avancée des droits (RBAC)",
         "💻 Expérience Utilisateur: Développement d'une interface réactive pour une gestion fluide des états"
       ],
-      "summary": "Conception de bout en bout d'une plateforme SaaS modulaire pour la digitalisation des processus RH (Leave Management System). Environnement technique: Next.js 14, TypeScript, Hono.js, Docker, Grafana, Prometheus, Loki, Azure AD, Tailwind CSS.",
+      "summary": "Conception de bout en bout d'une plateforme SaaS modulaire pour la digitalisation des processus RH. Projet : Leave Management System. Environnement technique : Next.js 14, TypeScript, Hono.js, Docker, Grafana, Prometheus, Loki, Azure AD, Tailwind CSS.",
       "url": "https://www.linkedin.com/company/teal-technology-services/",
-      "location": "Casablanca, Morocco"
+      "location": "Casablanca, Maroc"
     },
     {
-      "company": "Teal Technology Services (OCP Subsidiary)",
+      "company": "Teal Technology Services",
       "position": "Expert Technique .NET",
       "startDate": "2024-09-01",
       "endDate": "2025-02-28",
@@ -54,7 +70,7 @@
       "location": "Casablanca, Morocco"
     },
     {
-      "company": "Teal Technology Services (OCP Subsidiary)",
+      "company": "Teal Technology Services",
       "position": "Team Lead .NET",
       "startDate": "2022-01-01",
       "endDate": "2024-08-31",
@@ -243,136 +259,18 @@
   ],
   "publications": [],
   "skills": [
-    {
-      "name": "HTML5",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "CSS",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "JavaScript",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "TypeScript",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Next.js",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Angular",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Hono.js",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Bootstrap",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "ASP.NET Core",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "C#",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "WPF (MVVM)",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Entity Framework",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Blazor",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "SharePoint",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "SQL Server",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "PostgreSQL",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Docker",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Azure DevOps",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "GIT",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Grafana",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Prometheus",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "UML",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Architecture logicielle",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "ALM",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Scrum",
-      "level": "",
-      "keywords": []
-    },
-    {
-      "name": "Microsoft Azure",
-      "level": "",
-      "keywords": []
-    }
+    { "name": "Clean Architecture", "level": "Expert", "keywords": ["CQRS", "Microservices", "Vertical Slice", "SaaS Multi-Tenant"] },
+    { "name": "C# / .NET 10", "level": "Expert", "keywords": ["ASP.NET Core", "Minimal APIs", "Entity Framework Core 9", "MediatR", "SignalR"] },
+    { "name": "Next.js 16 / React 19", "level": "Expert", "keywords": ["TypeScript", "App Router", "Server Components"] },
+    { "name": "Tailwind CSS 4 / shadcn/ui", "level": "Expert", "keywords": ["Auth.js", "Hono.js"] },
+    { "name": "Intelligence Artificielle", "level": "Avancé", "keywords": ["OpenAI API", "RAG", "FAISS", "Agents IA", "Python", "FastAPI"] },
+    { "name": "Azure", "level": "Expert", "keywords": ["App Services", "Blob", "Functions", "Azure AD", "DevOps"] },
+    { "name": "Docker / Nginx", "level": "Expert", "keywords": ["Docker Compose", "Reverse Proxy", "GitHub Actions"] },
+    { "name": "Observabilité", "level": "Expert", "keywords": ["Grafana", "Prometheus", "Loki", "Fluent Bit"] },
+    { "name": "Sécurité & IAM", "level": "Avancé", "keywords": ["Zero Trust", "RBAC", "TLS 1.3", "IEC 62443", "WebSockets"] },
+    { "name": "PostgreSQL / SQL Server", "level": "Expert", "keywords": ["MongoDB", "Migrations EF Core"] },
+    { "name": "Angular", "level": "Avancé", "keywords": ["TypeScript", "RxJS"] },
+    { "name": "Scrum / Agile", "level": "Expert", "keywords": ["Team Lead", "SFD", "Estimation", "Gestion SLA"] }
   ],
   "languages": [
     {

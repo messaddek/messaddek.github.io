@@ -1,5 +1,5 @@
 /* Modern Terminal Portfolio - Enhanced Styles */
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap");
 
 :root {
   --primary-color: #00ff41;
@@ -20,7 +20,7 @@
 }
 
 body {
-  font-family: "Fira Code", "Courier New", monospace;
+  font-family: "JetBrains Mono", "Courier New", monospace;
   background: linear-gradient(135deg, #0a0e27 0%, #050814 50%, #0a0e27 100%);
   background-attachment: fixed;
   margin: 0;
@@ -180,6 +180,7 @@ body::after {
 .terminal,
 .cmd {
   color: var(--text-primary) !important;
+  font-family: "JetBrains Mono", "Courier New", monospace !important;
   font-size: 15px !important;
   letter-spacing: 0.5px;
 }
@@ -693,9 +694,30 @@ body::after {
   transition: all 0.5s ease;
 }
 
-/* Performance optimization */
-.terminal * {
+/* Performance optimization — scope will-change to only animated elements */
+.terminal::before,
+body::before,
+.cmd .cmd-cursor.cmd-blink,
+.cmd .cmd-prompt,
+.terminal .terminal-output div div {
   will-change: transform, opacity;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after,
+  .terminal,
+  .terminal .terminal-output div div,
+  .terminal .terminal-output > div,
+  .cmd .cmd-prompt,
+  .cmd .cmd-cursor.cmd-blink,
+  .terminal h1,
+  .terminal h2,
+  .terminal h3 {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* Print styles */
